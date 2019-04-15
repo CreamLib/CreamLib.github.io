@@ -1,0 +1,106 @@
+<!-- Component Page Title -->
+<div class="panelTitle">
+  <h2><strong>Datepicker</strong> Component</h2>
+  <ul>
+    <li><a scrollTo href="#calendar">Simple Datepicker</a></li>
+  </ul>
+</div>
+
+<!-- Component Title -->
+<div class="titleComponent">
+  <div class="descriptionComponent" id="calendar">
+    <h3>Simple Datepicker</h3>
+
+    <div class="explain">
+      <p>
+        Notice that most modern browsers today have powerful, native datepickers that are fully accessible and adapted
+        to the device. We suggest you to use it instead of a custom component; to do so, set the attribute
+        <code>type</code> to <em>date</em>.
+      </p>
+    </div>
+
+    <!-- Demo -->
+    <div class="demo">
+      <c3m-calendar id="firstCalendar" type="text"></c3m-calendar>
+    </div>
+
+    <div class="explain">
+      <h4>Accessibility Keys</h4>
+      <dl>
+        <div>
+          <dt><kbd>Up</kbd></dt>
+          <dd>Go back 7 days</dd>
+        </div>
+        <div>
+          <dt><kbd>Down</kbd></dt>
+          <dd>Advance 7 days</dd>
+        </div>
+        <div>
+          <dt><kbd>Left</kbd></dt>
+          <dd>Go back 1 day</dd>
+        </div>
+        <div>
+          <dt><kbd>Right</kbd></dt>
+          <dd>Avance 1 day</dd>
+        </div>
+        <div>
+          <dt><kbd>Page Up</kbd></dt>
+          <dd>Go to the previous Month if we are on the Calendar</dd>
+        </div>
+        <div>
+          <dt><kbd>Page Down</kbd></dt>
+          <dd>Go to the next Month if we are on the Calendar</dd>
+        </div>
+        <div>
+          <dt><kbd>Home</kbd></dt>
+          <dd>Go to the first day of Month if we are on the Calendar</dd>
+        </div>
+        <div>
+          <dt><kbd>End</kbd></dt>
+          <dd>Go to the last day of Month if we are on the Calendar</dd>
+        </div>
+        <div>
+          <dt><kbd>Esc</kbd></dt>
+          <dd>Exit the Calendar component</dd>
+        </div>
+        <div>
+          <dt><kbd>Tab</kbd></dt>
+          <dd>Go to previous button if we are on the calendar</dd>
+          <dd>Go to next button if we are on the previous button</dd>
+          <dd>Go to grid if we are on the next button</dd>
+        </div>
+        <div>
+          <dt><kbd>Shift + Tab</kbd></dt>
+          <dd>Go to previous button if we are on the next button</dd>
+          <dd>Go to next button if we are on the calendar</dd>
+          <dd>Go to grid if we are on the previous button</dd>
+        </div>
+        <div>
+          <dt><kbd>Enter</kbd> Or <kbd>Space</kbd></dt>
+          <dd>Go to next month if we are on the next button</dd>
+          <dd>Go to previous month if we are on the previous button</dd>
+          <dd>Select the focused date if we are on the calendar</dd>
+        </div>
+        <div>
+          <dt><kbd>CTRL + Enter</kbd> Or <kbd>Space</kbd></dt>
+          <dd>Go to next year if we are on the next button</dd>
+          <dd>Go to previous year if we are on the previous button</dd>
+        </div>
+      </dl>
+    </div>
+
+    <!-- TABS SNIPPETS -->
+    <c3m-tabs class="snippets">
+      <c3m-tab tabTitle="To call the component">
+        <div class="code">
+          <!--?prettify lang=html linenums=true?-->
+          <pre class="prettyprint linenums">
+
+&lt;c3m-calendar type=&#34;text&#34;&gt;&lt;/c3m-calendar&gt;
+                    </pre
+          >
+        </div>
+      </c3m-tab>
+    </c3m-tabs>
+  </div>
+</div>

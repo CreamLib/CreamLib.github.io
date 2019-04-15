@@ -1,0 +1,88 @@
+
+<!-- TITLE TABS COMPONENT PAGE -->
+<div class="panelTitle">
+  <h2><strong>Accordion</strong> Component</h2>
+  <ul>
+    <li><a scrollTo href="accordion">Normal Accordion</a></li>
+  </ul>
+</div>
+
+
+<!-- DESCRIPTION ACCORDION COMPONENT PAGE -->
+<div class="titleComponent">
+  <div class="descriptionComponent" id="accordion">
+    <h3>Normal Accordion</h3>
+
+    <div class="explain">
+      <p>This component is fully accessible and semantic; it is used for the main navigation of this web site.</p>
+      <p>If you want a specific block to be opened on page load, set "isOpen" to "true".</p>
+    </div>
+
+    <!-- ACCORDION DEMO -->
+    <div class="demo">
+        <c3m-accordion>
+
+            <c3m-accordion-item nameButton="Title 1" [index]="0" [isOpen]="true">
+              <p>Illud tamen clausos vehementer angebat quod captis navigiis, quae frumenta vehebant per flumen, Isauri quidem alimentorum copiis adfluebant, ipsi vero solitarum rerum cibos iam consumendo inediae propinquantis aerumnas exitialis horrebant.</p>
+            </c3m-accordion-item>
+            <c3m-accordion-item nameButton="Title 2" [index]="1" [isOpen]="false">
+             <p>Dum haec in oriente aguntur, Arelate hiemem agens Constantius post theatralis ludos atque circenses ambitioso editos apparatu diem sextum idus Octobres, qui imperii eius annum tricensimum terminabat, insolentiae pondera gravius librans, siquid dubium deferebatur aut falsum, pro liquido accipiens et conperto, inter alia excarnificatum Gerontium Magnentianae comitem partis exulari maerore multavit.</p>
+            </c3m-accordion-item>
+            <c3m-accordion-item nameButton="Title 3" [index]="2" [isOpen]="false">
+              <p>
+                Raptim igitur properantes ut motus sui rumores celeritate nimia praevenirent, vigore corporum ac levitate confisi per flexuosas semitas ad summitates collium tardius evadebant. et cum superatis difficultatibus arduis ad supercilia venissent fluvii Melanis alti et verticosi, qui pro muro tuetur accolas circumfusus, augente nocte adulta terrorem quievere paulisper lucem opperientes. arbitrabantur enim nullo inpediente transgressi inopino adcursu adposita quaeque vastare, sed in cassum labores pertulere gravissimos.
+              </p>
+            </c3m-accordion-item>
+            <c3m-accordion-item nameButton="Title 4" [index]="3" [isOpen]="false">
+              <p>
+                Post quorum necem nihilo lenius ferociens
+              </p>
+            </c3m-accordion-item>
+
+          </c3m-accordion>
+      </div>
+
+      <div class="explain">
+        <dl>
+          <div>
+            <dt>nameButton</dt>
+            <dd>Title of the collapse</dd>
+          </div>
+          <div>
+            <dt>Index</dt>
+            <dd>Order of the collapse</dd>
+          </div>
+          <div>
+            <dt>isOpen</dt>
+            <dd>true if the collapse is open by default</dd>
+          </div>
+        </dl>
+      </div>
+
+    <!-- TABS SNIPPETS -->
+    <c3m-tabs class="snippets">
+      <c3m-tab tabTitle="To call the component">
+        <div class="code">
+          <!--?prettify lang=html linenums=true?-->
+          <pre class="prettyprint linenums">
+  &#x3C;c3m-accordion&#x3E;
+      &#x3C;c3m-accordion-item nameButton=&#x22;Title1&#x22;  [index]=0 [isOpen]=false&#x3E;
+        Content 1
+      &#x3C;/c3m-accordion-item&#x3E;
+      &#x3C;c3m-accordion-item nameButton=&#x22;Title 2&#x22;  [index]=1 [isOpen]=false&#x3E;
+        Content 2
+      &#x3C;/c3m-accordion-item&#x3E;
+      &#x3C;c3m-accordion-item nameButton=&#x22;Title3&#x22;  [index]=2 [isOpen]=false&#x3E;
+        Content 3
+      &#x3C;/c3m-accordion-item&#x3E;
+      &#x3C;c3m-accordion-item nameButton=&#x22;Title 4&#x22;  [index]=3 [isOpen]=false&#x3E;
+        Content 4
+      &#x3C;/c3m-accordion-item&#x3E;
+  &#x3C;/c3m-accordion&#x3E;
+            </pre>
+        </div>
+      </c3m-tab>
+
+    </c3m-tabs>
+  </div>
+</div>

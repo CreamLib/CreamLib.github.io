@@ -1,0 +1,10 @@
+app-breadcrumbs li {
+  display: inline-block;
+  margin-right: 0.1rem;
+}
+
+app-breadcrumbs li:not(:last-of-type)::after {
+  display: inline-block;
+  content: '>';
+  padding: 0 0.5em;
+}

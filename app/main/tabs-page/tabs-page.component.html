@@ -1,0 +1,82 @@
+
+<!-- TITLE TABS COMPONENT PAGE -->
+<div class="panelTitle">
+  <h2> <strong> Tabs </strong> Component </h2>
+  <ul>
+    <li><a href="#tabs">Normal Tabs</a></li>
+  </ul>
+</div>
+
+
+<!-- DESCRIPTION TABS COMPONENT PAGE -->
+<div class="titleComponent">
+  <div class="descriptionComponent" id="tabs">
+
+      <h3>Normal Tabs</h3>
+
+      <div class="explain">
+          <p>The tab component is composed by two different components: one
+            for the tab container (<code>TabsComponent</code>) and the other one for the tab content (<code>TabComponent</code>).</p>
+      </div>
+
+    <div class="demo">
+      <!-- TABS DEMO -->
+      <c3m-tabs class="presentationTabV">
+        <c3m-tab tabTitle="Title1">
+          Content 1
+        </c3m-tab>
+        <c3m-tab tabTitle="Title2">
+          Content 2
+        </c3m-tab>
+        <c3m-tab tabTitle="Title3">
+          Content 3
+        </c3m-tab>
+        <c3m-tab tabTitle="Title4">
+          Content 4
+        </c3m-tab>
+      </c3m-tabs>
+    </div>
+    <div class="explain">
+      <dl>
+        <div>
+          <dt>tabTitle</dt>
+          <dd>title of the tab</dd>
+        </div>
+        <div>
+          <dt>Content text</dt>
+          <dd>Content of the tab (ng-content)</dd>
+        </div>
+      </dl>
+    </div>
+
+    <!-- TABS SNIPPETS -->
+    <c3m-tabs class="snippets">
+      <c3m-tab tabTitle="HTML">
+        <p class="pre-code"> To call the component </p>
+        <div class="code">
+           <!--?prettify lang=html linenums=true?-->
+            <pre class="prettyprint linenums">
+              <code>
+                  &#x3C;c3m-tabs &#x3E;
+                      &#x3C;c3m-tab tabTitle=&#x22;Title1&#x22;&#x3E;
+                          Content 1
+                      &#x3C;/c3m-tab&#x3E;
+                      &#x3C;c3m-tab tabTitle=&#x22;Title2&#x22;&#x3E;
+                          Content 2
+                      &#x3C;/c3m-tab&#x3E;
+                      &#x3C;c3m-tab tabTitle=&#x22;Title3&#x22;&#x3E;
+                          Content 3
+                      &#x3C;/c3m-tab&#x3E;
+                      &#x3C;c3m-tab tabTitle=&#x22;Title4&#x22;&#x3E;
+                          Content 4
+                      &#x3C;/c3m-tab&#x3E;
+                  &#x3C;/c3m-tabs&#x3E;
+              </code>
+            </pre>
+        </div>
+      </c3m-tab>
+    </c3m-tabs>
+
+  </div>
+
+</div>

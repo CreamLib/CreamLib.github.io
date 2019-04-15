@@ -1,0 +1,21 @@
+{
+  "name": "@creamlib/ng",
+  "version": "1.0.5",
+  "peerDependencies": {
+    "@angular/common": "^7.1.0",
+    "@angular/core": "^7.1.0"
+  },
+  "main": "bundles/creamlib-ng.umd.js",
+  "module": "fesm5/creamlib-ng.js",
+  "es2015": "fesm2015/creamlib-ng.js",
+  "esm5": "esm5/creamlib-ng.js",
+  "esm2015": "esm2015/creamlib-ng.js",
+  "fesm5": "fesm5/creamlib-ng.js",
+  "fesm2015": "fesm2015/creamlib-ng.js",
+  "typings": "creamlib-ng.d.ts",
+  "metadata": "creamlib-ng.metadata.json",
+  "sideEffects": false,
+  "dependencies": {
+    "tslib": "^1.9.0"
+  }
+}

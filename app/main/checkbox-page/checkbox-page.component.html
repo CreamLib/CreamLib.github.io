@@ -1,0 +1,296 @@
+<!-- TITLE SLIDER COMPONENT PAGE -->
+<div class="panelTitle">
+  <h2><strong>Checkboxes</strong></h2>
+  <ul>
+    <li><a scrollTo href="#checkbox">Checkboxes</a></li>
+    <li><a scrollTo href="#checkbox-group">Checkbox Group</a></li>
+    <li><a scrollTo href="#checkbox-link">Checkbox with link in label</a></li>
+    <li><a scrollTo href="#checkbox-button">Checkbox button</a></li>
+  </ul>
+</div>
+
+
+<!-- DESCRIPTION SLIDER COMPONENT PAGE -->
+<div class="titleComponent">
+  <div class="descriptionComponent" id="checkbox">
+    <h3>Checkboxes</h3>
+
+    <div class="demo">
+      <!-- SIMPLE CHECKBOX -->
+      <c3m-checkbox
+        title="Do you want check me?"
+        name="checkboxName1"
+        value="checkboxValue1"
+        [id]="'checkbox1'">
+      </c3m-checkbox>
+    </div>
+
+    <div class="explain">
+      <dl>
+        <div>
+          <dt>title</dt>
+          <dd>The label tag</dd>
+        </div>
+        <div>
+          <dt>id</dt>
+          <dd>The most important attribute : Link between Label and Input</dd>
+        </div>
+        <div>
+          <dt>name</dt>
+          <dd>The name of input</dd>
+        </div>
+        <div>
+          <dt>class</dt>
+          <dd>allows to customize checkboxes (optional)</dd>
+        </div>
+        <div>
+          <dt>checked</dt>
+          <dd>if present, checkbox will be checked (optional)</dd>
+        </div>
+        <div>
+          <dt>required</dt>
+          <dd>if present, check will be required on submit (optional)</dd>
+        </div>
+        <div>
+          <dt>disabled</dt>
+          <dd>disable the checkbox (optional)</dd>
+        </div>
+      </dl>
+    </div>
+
+    <h4>Custom checkbox (add the <code>custom</code> class)</h4>
+
+    <div class="demo">
+      <!-- SIMPLE CHECKBOX -->
+      <c3m-checkbox
+        title="Do you want check me?"
+        name="checkboxName2"
+        value="checkboxValue2"
+        [id]="'checkbox2'"
+        class="custom">
+      </c3m-checkbox>
+    </div>
+
+    <h4>Unstressed labels (add the <code>unstressed</code> class)</h4>
+
+    <div class="demo">
+        <!-- SIMPLE CHECKBOX -->
+        <c3m-checkbox
+          title="Do you want check me? This case is suitable for longer labels"
+          name="checkboxName3"
+          value="checkboxValue3"
+          [id]="'checkbox3'"
+          class="unstressed">
+        </c3m-checkbox>
+    </div>
+
+    <h4>On-Off Button (add the <code>on-off</code> class)</h4>
+
+    <div class="demo">
+      <!-- SIMPLE CHECKBOX -->
+      <c3m-checkbox
+        title="Do you want check me?"
+        name="checkboxOnOff"
+        value="checked"
+        [id]="'checkboxOnOff'"
+        class="on-off">
+      </c3m-checkbox>
+    </div>
+
+    <!-- TABS SNIPPETS -->
+    <c3m-tabs class="snippets">
+      <c3m-tab tabTitle="To call the component">
+        <div class="code">
+           <!--?prettify lang=html linenums=true?-->
+            <pre class="prettyprint linenums">
+&lt;!-- SIMPLE CHECKBOX --&gt;
+&lt;c3m-checkbox
+  title=&#34;Do you want check me?&#34;
+  name=&#34;checkboxName1&#34;
+  value=&#34;checkboxValue1&#34;
+  [id]=&#34;&apos;checkbox1&apos;&#34;&gt;
+&lt;/c3m-checkbox&gt;
+
+
+&lt;!-- CUSTOM CSS CHECKBOX --&gt;
+&lt;c3m-checkbox
+  title=&#34;Do you want check me?&#34;
+  name=&#34;checkboxName2&#34;
+  value=&#34;checkboxValue2&#34;
+  [id]=&#34;&apos;checkbox2&apos;&#34;
+  class=&#34;custom&#34;&gt;
+&lt;/c3m-checkbox&gt;
+
+&lt;!-- UNSTRESSED LABELS --&gt;
+&lt;c3m-checkbox
+  title=&#34;Do you want check me?&#34;
+  name=&#34;checkboxName3&#34;
+  value=&#34;checkboxValue3&#34;
+  [id]=&#34;&apos;checkbox3&apos;&#34;
+  class=&#34;unstressed&#34;&gt;
+&lt;/c3m-checkbox&gt;
+            </pre>
+        </div>
+      </c3m-tab>
+
+    </c3m-tabs>
+  </div>
+</div>
+
+
+<!-- CHECKBOX GROUP -->
+
+<div class="titleComponent">
+  <div class="descriptionComponent" id="checkbox-group">
+    <h3>Checkbox Group</h3>
+
+    <h4>Common List</h4>
+    <div class="demo">
+      <c3m-checkbox-group legend="Which conferences would you like to attend?">
+        <c3m-checkbox-group-item
+          title="Smashing Conf"
+          name="conf"
+          value="smash"
+          [id]="'smash'">
+        </c3m-checkbox-group-item>
+        <c3m-checkbox-group-item
+          title="An Event Apart"
+          name="conf"
+          value="apart"
+          [id]="'apart'">
+        </c3m-checkbox-group-item>
+        <c3m-checkbox-group-item
+          title="Performance Now"
+          name="conf"
+          value="perf"
+          [id]="'perf'">
+        </c3m-checkbox-group-item>
+      </c3m-checkbox-group>
+    </div>
+
+    <h4>Single Line (add the <em>go-along</em> class)</h4>
+    <div class="demo">
+      <c3m-checkbox-group class="go-along" legend="Which subjects are you interested on?">
+        <c3m-checkbox-group-item
+          title="web"
+          name="interest"
+          value="web"
+          [id]="'confWeb'">
+        </c3m-checkbox-group-item>
+        <c3m-checkbox-group-item
+          title="mobile"
+          name="interest"
+          value="mobile"
+          [id]="'confMob'">
+        </c3m-checkbox-group-item>
+        <c3m-checkbox-group-item
+          title="cloud"
+          name="interest"
+          value="cloud"
+          [id]="'confCloud'">
+        </c3m-checkbox-group-item>
+      </c3m-checkbox-group>
+    </div>
+
+
+    <!-- TABS SNIPPETS -->
+    <c3m-tabs class="snippets">
+      <c3m-tab tabTitle="To call the component">
+        <div class="code">
+           <!--?prettify lang=html linenums=true?-->
+            <pre class="prettyprint linenums">
+&lt;c3m-checkbox-group class=&#34;go-along&#34; legend=&#34;Which subjects are you interested on?&#34;&gt;
+    &lt;c3m-checkbox-group-item
+      title=&#34;web&#34;
+      name=&#34;interest&#34;
+      value=&#34;web&#34;
+      [id]=&#34;'confWeb'&#34;&gt;
+    &lt;/c3m-checkbox-group-item&gt;
+    &lt;c3m-checkbox-group-item
+      title=&#34;mobile&#34;
+      name=&#34;interest&#34;
+      value=&#34;mobile&#34;
+      [id]=&#34;'confMob'&#34;&gt;
+    &lt;/c3m-checkbox-group-item&gt;
+    &lt;c3m-checkbox-group-item
+      title=&#34;cloud&#34;
+      name=&#34;interest&#34;
+      value=&#34;cloud&#34;
+      [id]=&#34;'confCloud'&#34;&gt;
+    &lt;/c3m-checkbox-group-item&gt;
+  &lt;/c3m-checkbox-group&gt;
+            </pre>
+        </div>
+      </c3m-tab>
+
+    </c3m-tabs>
+  </div>
+</div>
+
+<!-- RADIO GROUP BUTTON -->
+<div class="titleComponent">
+  <div class="descriptionComponent" id="checkbox-link">
+    <h3>Checkbox With Link in Label</h3>
+
+    <div class="demo">
+      <c3m-checkbox-link
+        [id]="'tofu'"
+        name="tofu"
+        value="ok">
+        I've read and I agree with the <a href="#">termes of use</a>
+      </c3m-checkbox-link>
+    </div>
+
+    <!-- TABS SNIPPETS -->
+    <c3m-tabs class="snippets">
+      <c3m-tab tabTitle="To call the component">
+        <div class="code">
+           <!--?prettify lang=html linenums=true?-->
+            <pre class="prettyprint linenums">
+&lt;c3m-checkbox-link
+  [id]=&#34;'tofu'&#34;
+  name=&#34;tofu&#34;
+  value=&#34;ok&#34;&gt;
+  I've read and I agree with the &lt;a href=&#34;#&#34;&gt;termes of use&lt;/a&gt;
+&lt;/c3m-checkbox-link&gt;
+            </pre>
+        </div>
+      </c3m-tab>
+
+    </c3m-tabs>
+  </div>
+</div>
+
+<!-- RADIO CHECK BUTTON-->
+
+<div class="titleComponent">
+  <div class="descriptionComponent" id="checkbox-button">
+    <h3>Checkbox Button</h3>
+
+    <div class="demo">
+      <!-- CHECKBOX BUTTON -->
+      <c3m-checkbox-button
+        title="Check me!"
+        name="checkboxName3">
+      </c3m-checkbox-button>
+    </div>
+
+
+    <!-- TABS SNIPPETS -->
+    <c3m-tabs class="snippets">
+      <c3m-tab tabTitle="To call the component">
+        <div class="code">
+           <!--?prettify lang=html linenums=true?-->
+            <pre class="prettyprint linenums">
+&lt;!-- CHECKBOX BUTTON --&gt;
+&lt;c3m-checkbox-button
+  title=&#34;Check me !&#34;
+  name=&#34;checkboxName3&#34;&gt;
+&lt;/c3m-checkbox-button&gt;
+            </pre>
+        </div>
+      </c3m-tab>
+
+    </c3m-tabs>
+  </div>
+</div>
