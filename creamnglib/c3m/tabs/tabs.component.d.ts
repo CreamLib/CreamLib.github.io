@@ -1,19 +1,18 @@
-import { ElementRef, AfterViewInit, QueryList, ChangeDetectorRef } from '@angular/core';
+import { QueryList, AfterContentInit, ChangeDetectorRef, ElementRef, AfterViewInit } from '@angular/core';
 import { TabComponent } from './tabs-item/tabs-item.component';
-export declare class TabsComponent implements AfterViewInit {
+export declare class TabsComponent implements AfterViewInit, AfterContentInit {
     private cdr;
+    tabs: QueryList<TabComponent>;
     tabsElement: QueryList<ElementRef>;
-    tabComponents: QueryList<TabComponent>;
-    tabs: TabComponent[];
+    container: ElementRef;
     isOver: boolean;
     widthBreak: number;
     sizeInit: number;
+    marginInit: any;
     arrayTmp: ElementRef[];
-    startIndexActiv: number;
-    TabComponentBis: typeof TabComponent;
-    onResize(event: any): void;
-    addTab(tab: TabComponent): void;
-    selectTab(tab: TabComponent): void;
+    ngAfterContentInit(): void;
     ngAfterViewInit(): void;
+    onResize(event: any): void;
+    selectTab(tab: TabComponent): void;
     constructor(cdr: ChangeDetectorRef);
 }

@@ -1,9 +1,5 @@
-import { OnInit } from '@angular/core';
-import { Http } from '@angular/http';
-export declare class ListOrderComponent implements OnInit {
-    private http;
+import { ListValue } from '../list/list.model';
+export declare class ListOrderComponent {
     title: any;
-    constructor(http: Http);
-    listItem: any[];
-    ngOnInit(): void;
+    values: ListValue[];
 }

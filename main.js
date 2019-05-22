@@ -4,7 +4,7 @@
 /*!**********************************************!*\
   !*** ./dist/creamnglib/fesm5/creamlib-ng.js ***!
   \**********************************************/
-/*! exports provided: ButtonComponent, ButtonFileComponent, ButtonIconComponent, ButtonIconOnlyComponent, ButtonSubmitComponent, ToastComponent, AccordionComponent, AccordionItemComponent, CalendarComponent, CarouselComponent, CarouselItemComponent, CheckboxComponent, CheckboxButtonComponent, CheckboxGroupComponent, CheckboxGroupItemComponent, CheckboxLinkComponent, DropdownComponent, DropdownItemComponent, FieldsetComponent, InputComponent, InputErrorMsgComponent, InputFloatingComponent, InputMailComponent, InputMaterialComponent, InputPasswordComponent, InputSearchComponent, InputTelComponent, InputUrlComponent, ListComponent, ListDescriptionComponent, ListOrderComponent, ListThumbnailsComponent, RadioComponent, RadioItemComponent, SelectComponent, SelectDatalistComponent, SelectDatalistsComponent, SkipComponent, SliderComponent, ProgressComponent, SpinnerProgressComponent, StepComponent, StepItemComponent, ColumnTableComponent, ToggleTableComponent, PageSwipeTableComponent, TabsComponent, TabComponent, PaginationComponent, ModalComponent, ModalAlertComponent, ButtonLinkComponent, ModalDirective, PaginationDirective, StepsDirective, ScrolltoDirective, CreamnglibModule, ɵa */
+/*! exports provided: ButtonComponent, ButtonFileComponent, ButtonIconComponent, ButtonIconOnlyComponent, ButtonSubmitComponent, ToastComponent, AccordionComponent, AccordionItemComponent, CalendarComponent, CarouselComponent, CarouselItemComponent, CheckboxComponent, CheckboxButtonComponent, CheckboxGroupComponent, CheckboxGroupItemComponent, CheckboxLinkComponent, DropdownComponent, DropdownItemComponent, FieldsetComponent, InputComponent, InputErrorMsgComponent, InputFloatingComponent, InputMailComponent, InputMaterialComponent, InputPasswordComponent, InputSearchComponent, InputTelComponent, InputUrlComponent, ListComponent, ListDescriptionComponent, ListOrderComponent, ListThumbnailsComponent, RadioComponent, RadioItemComponent, SelectComponent, SelectDatalistComponent, SelectDatalistsComponent, SkipComponent, SliderComponent, ProgressComponent, SpinnerProgressComponent, StepComponent, TabsComponent, TabComponent, PaginationComponent, ModalComponent, ModalAlertComponent, ButtonLinkComponent, ModalDirective, PaginationDirective, StepsDirective, ScrolltoDirective, CreamnglibModule, ɵa */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -51,10 +51,6 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ProgressComponent", function() { return ProgressComponent; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "SpinnerProgressComponent", function() { return SpinnerProgressComponent; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "StepComponent", function() { return StepComponent; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "StepItemComponent", function() { return StepItemComponent; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ColumnTableComponent", function() { return ColumnTableComponent; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "ToggleTableComponent", function() { return ToggleTableComponent; });
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PageSwipeTableComponent", function() { return PageSwipeTableComponent; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TabsComponent", function() { return TabsComponent; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TabComponent", function() { return TabComponent; });
 /* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "PaginationComponent", function() { return PaginationComponent; });
@@ -2543,45 +2539,26 @@ var InputUrlComponent = /** @class */ (function () {
  * @fileoverview added by tsickle
  * @suppress {checkTypes,extraRequire,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
 var ListComponent = /** @class */ (function () {
-    // Constructor
-    function ListComponent(http) {
-        this.http = http;
+    function ListComponent() {
+        this.values = [];
     }
-    // On Init
-    // On Init
-    /**
-     * @return {?}
-     */
-    ListComponent.prototype.ngOnInit = 
-    // On Init
-    /**
-     * @return {?}
-     */
-    function () {
-        var _this = this;
-        // Get Data of a JSON (or other...)
-        Object(rxjs__WEBPACK_IMPORTED_MODULE_2__["from"])(this.http.get('assets/json/dataList.json'))
-            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["map"])(function (response) { return response.json(); })) // Specify JSON type
-            .subscribe(function (data) {
-            // Set items to response Json
-            _this.listItem = data;
-        });
-    };
     ListComponent.decorators = [
         { type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Component"], args: [{
                     selector: 'c3m-list',
-                    template: "<ul>\n  <li *ngFor=\"let item of listItem\">{{ item.value }}</li>\n</ul>\n",
+                    template: "<ul>\n  <li *ngFor=\"let item of values\">{{ item.value }}</li>\n</ul>\n",
                     encapsulation: _angular_core__WEBPACK_IMPORTED_MODULE_4__["ViewEncapsulation"].None,
                     styles: ["c3m-list ul{list-style-type:disc;margin-left:2rem}c3m-list li+li{margin-top:.5em}"]
                 }] }
     ];
-    /** @nocollapse */
-    ListComponent.ctorParameters = function () { return [
-        { type: _angular_http__WEBPACK_IMPORTED_MODULE_1__["Http"] }
-    ]; };
     ListComponent.propDecorators = {
-        title: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Input"] }]
+        title: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Input"] }],
+        values: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Input"] }]
     };
     return ListComponent;
 }());
@@ -2591,44 +2568,19 @@ var ListComponent = /** @class */ (function () {
  * @suppress {checkTypes,extraRequire,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 var ListDescriptionComponent = /** @class */ (function () {
-    // Constructor
-    function ListDescriptionComponent(http) {
-        this.http = http;
+    function ListDescriptionComponent() {
     }
-    // On Init
-    // On Init
-    /**
-     * @return {?}
-     */
-    ListDescriptionComponent.prototype.ngOnInit = 
-    // On Init
-    /**
-     * @return {?}
-     */
-    function () {
-        var _this = this;
-        // Get Data of a JSON (or other...)
-        Object(rxjs__WEBPACK_IMPORTED_MODULE_2__["from"])(this.http.get('assets/json/dataList.json'))
-            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["map"])(function (response) { return response.json(); })) // Specify JSON type
-            .subscribe(function (data) {
-            // Set items to response Json
-            _this.listItem = data;
-        });
-    };
     ListDescriptionComponent.decorators = [
         { type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Component"], args: [{
                     selector: 'c3m-list-description',
-                    template: "<dl *ngFor=\"let item of listItem\">\n  <dt>{{ item.title }}</dt>\n  <dd>{{ item.content }}</dd>\n</dl>\n",
+                    template: "<dl *ngFor=\"let item of values\">\n  <dt>{{ item.title }}</dt>\n  <dd>{{ item.content }}</dd>\n</dl>\n",
                     encapsulation: _angular_core__WEBPACK_IMPORTED_MODULE_4__["ViewEncapsulation"].None,
                     styles: ["c3m-list-description dl{margin:1rem 0}c3m-list-description dt{font-family:var(--stack-b)}c3m-list-description dd{margin:.25em 0 0 1em}"]
                 }] }
     ];
-    /** @nocollapse */
-    ListDescriptionComponent.ctorParameters = function () { return [
-        { type: _angular_http__WEBPACK_IMPORTED_MODULE_1__["Http"] }
-    ]; };
     ListDescriptionComponent.propDecorators = {
-        title: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Input"] }]
+        title: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Input"] }],
+        values: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Input"] }]
     };
     return ListDescriptionComponent;
 }());
@@ -2638,44 +2590,19 @@ var ListDescriptionComponent = /** @class */ (function () {
  * @suppress {checkTypes,extraRequire,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 var ListOrderComponent = /** @class */ (function () {
-    // Constructor
-    function ListOrderComponent(http) {
-        this.http = http;
+    function ListOrderComponent() {
     }
-    // On Init
-    // On Init
-    /**
-     * @return {?}
-     */
-    ListOrderComponent.prototype.ngOnInit = 
-    // On Init
-    /**
-     * @return {?}
-     */
-    function () {
-        var _this = this;
-        // Get Data of a JSON (or other...)
-        Object(rxjs__WEBPACK_IMPORTED_MODULE_2__["from"])(this.http.get('assets/json/dataList.json'))
-            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["map"])(function (response) { return response.json(); })) // Specify JSON type
-            .subscribe(function (data) {
-            // Set items to response Json
-            _this.listItem = data;
-        });
-    };
     ListOrderComponent.decorators = [
         { type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Component"], args: [{
                     selector: 'c3m-list-order',
-                    template: "<ol>\n  <li *ngFor=\"let item of listItem\">{{ item.value }}</li>\n</ol>\n",
+                    template: "<ol>\n  <li *ngFor=\"let item of values\">{{ item.value }}</li>\n</ol>\n",
                     encapsulation: _angular_core__WEBPACK_IMPORTED_MODULE_4__["ViewEncapsulation"].None,
                     styles: ["c3m-list-order ol{list-style-type:decimal;margin-left:2rem}c3m-list-order li+li{margin-top:.5em}"]
                 }] }
     ];
-    /** @nocollapse */
-    ListOrderComponent.ctorParameters = function () { return [
-        { type: _angular_http__WEBPACK_IMPORTED_MODULE_1__["Http"] }
-    ]; };
     ListOrderComponent.propDecorators = {
-        title: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Input"] }]
+        title: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Input"] }],
+        values: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Input"] }]
     };
     return ListOrderComponent;
 }());
@@ -2685,44 +2612,19 @@ var ListOrderComponent = /** @class */ (function () {
  * @suppress {checkTypes,extraRequire,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 var ListThumbnailsComponent = /** @class */ (function () {
-    // Constructor
-    function ListThumbnailsComponent(http) {
-        this.http = http;
+    function ListThumbnailsComponent() {
     }
-    // On Init
-    // On Init
-    /**
-     * @return {?}
-     */
-    ListThumbnailsComponent.prototype.ngOnInit = 
-    // On Init
-    /**
-     * @return {?}
-     */
-    function () {
-        var _this = this;
-        // Get Data of a JSON (or other...)
-        Object(rxjs__WEBPACK_IMPORTED_MODULE_2__["from"])(this.http.get('assets/json/dataList.json'))
-            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["map"])(function (response) { return response.json(); })) // Specify JSON type
-            .subscribe(function (data) {
-            // Set items to response Json
-            _this.listItem = data;
-        });
-    };
     ListThumbnailsComponent.decorators = [
         { type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Component"], args: [{
                     selector: 'c3m-list-thumbnails',
-                    template: "<ul>\n  <li *ngFor=\"let item of listItem\">\n    <p><img src=\"{{ item.url }}\" alt=\"fake image\" /></p>\n    <div class=\"content\">\n      {{ item.value }}\n    </div>\n  </li>\n</ul>\n",
+                    template: "<ul>\n  <li *ngFor=\"let item of values\">\n    <p><img src=\"{{ item.url }}\" alt=\"fake image\" /></p>\n    <div class=\"content\">\n      {{ item.value }}\n    </div>\n  </li>\n</ul>\n",
                     encapsulation: _angular_core__WEBPACK_IMPORTED_MODULE_4__["ViewEncapsulation"].None,
                     styles: ["c3m-list-thumbnails li{display:flex;align-items:center;max-width:35em}c3m-list-thumbnails li+li{padding-top:1rem;margin-top:1rem;border-top:1px solid var(--n-medium)}c3m-list-thumbnails li>p{flex-basis:30%;max-width:180px}c3m-list-thumbnails .content{flex-basis:65%;line-height:1.45}"]
                 }] }
     ];
-    /** @nocollapse */
-    ListThumbnailsComponent.ctorParameters = function () { return [
-        { type: _angular_http__WEBPACK_IMPORTED_MODULE_1__["Http"] }
-    ]; };
     ListThumbnailsComponent.propDecorators = {
-        title: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Input"] }]
+        title: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Input"] }],
+        values: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Input"] }]
     };
     return ListThumbnailsComponent;
 }());
@@ -3175,124 +3077,35 @@ var SpinnerProgressComponent = /** @class */ (function () {
  * @fileoverview added by tsickle
  * @suppress {checkTypes,extraRequire,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
-var StepItemComponent = /** @class */ (function () {
-    /* CONSTRUCTOR */
-    function StepItemComponent(step, cdr) {
-        this.cdr = cdr;
-        this.isActive = false;
-        this.isPassed = false;
-        this.stepLink = '';
-        step.addTab(this); // Add item on Items Tab
-    }
-    Object.defineProperty(StepItemComponent.prototype, "Past", {
-        get: /**
-         * @return {?}
-         */
-        function () {
-            return this._past;
-        },
-        set: /**
-         * @param {?} value
-         * @return {?}
-         */
-        function (value) {
-            this._past = value;
-            this.cdr.detectChanges();
-        },
-        enumerable: true,
-        configurable: true
-    });
-    Object.defineProperty(StepItemComponent.prototype, "Future", {
-        get: /**
-         * @return {?}
-         */
-        function () {
-            return this._future;
-        },
-        set: /**
-         * @param {?} value
-         * @return {?}
-         */
-        function (value) {
-            this._future = value;
-            this.cdr.detectChanges();
-        },
-        enumerable: true,
-        configurable: true
-    });
-    /**
-     * @return {?}
-     */
-    StepItemComponent.prototype.ngAfterViewInit = /**
-     * @return {?}
-     */
-    function () {
-        this.reference = this.itemRef;
-    };
-    StepItemComponent.decorators = [
-        { type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Component"], args: [{
-                    selector: 'c3m-step-item',
-                    template: "<!-- Step Item -->\n<li #items [ngClass]=\"{ active: isActive, past: Past, future: Future }\" [c3mStepCurrent]=\"isActive\">\n  <ng-container *ngIf=\"isPassed\">\n    <a href=\"{{ stepLink }}\">{{ title }}</a>\n  </ng-container>\n  <ng-container *ngIf=\"!isPassed\">\n    {{ title }}\n  </ng-container>\n</li>\n",
-                    styles: [""]
-                }] }
-    ];
-    /** @nocollapse */
-    StepItemComponent.ctorParameters = function () { return [
-        { type: StepComponent },
-        { type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["ChangeDetectorRef"] }
-    ]; };
-    StepItemComponent.propDecorators = {
-        itemRef: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["ViewChild"], args: ['items',] }],
-        title: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Input"] }],
-        isActive: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Input"] }],
-        isPassed: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Input"] }],
-        stepLink: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Input"] }],
-        indexStep: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Input"] }],
-        reference: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Input"] }],
-        Past: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Input"], args: ['isPast',] }],
-        Future: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Input"], args: ['isFuture',] }]
-    };
-    return StepItemComponent;
-}());
-
-/**
- * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
- */
 var StepComponent = /** @class */ (function () {
-    /* CONSTRUCTOR */
     function StepComponent(cdr) {
         this.cdr = cdr;
-        /* VARIABLES */
-        this.itemStepTab = [];
-        this.itemsStepTabReference = [];
+        this.stepLink = '#';
         this.sizeInit = 0;
-        this.StepItemComponentBis = StepItemComponent;
     }
-    /* AFTER VIEW INIT */
-    /* AFTER VIEW INIT */
     /**
      * @return {?}
      */
-    StepComponent.prototype.ngAfterViewInit = /* AFTER VIEW INIT */
-    /**
+    StepComponent.prototype.ngOnInit = /**
      * @return {?}
      */
     function () {
-        var _this = this;
-        this.itemStepTab.forEach(function (StepItemComponentBis, index) {
-            StepItemComponentBis.indexStep = index + 1;
-            _this.itemsStepTabReference.push(StepItemComponentBis.reference);
-            if (StepItemComponentBis.isActive) {
-                _this.theActiveStepItem = StepItemComponentBis.indexStep;
-            }
-        });
+        this.indexNum = parseInt(this.activeStep, 10) - 1;
+    };
+    /**
+     * @return {?}
+     */
+    StepComponent.prototype.ngAfterViewInit = /**
+     * @return {?}
+     */
+    function () {
+        this.stepLi = this.stepLiReference.toArray();
         /* CALCUL BREAKPOINT ON PAGE LOAD */
-        for (var i = 0; i < this.itemsStepTabReference.length - 1; i++) {
-            this.sizeInit = this.itemsStepTabReference[i].nativeElement.clientWidth + this.sizeInit;
+        for (var i = 0; i < this.stepLi.length; i++) {
+            this.sizeInit = this.stepLi[i].nativeElement.clientWidth + this.sizeInit;
+            console.log(this.sizeInit);
         }
-        if (this.itemsStepTabReference[this.itemsStepTabReference.length - 1].nativeElement.offsetTop !==
-            this.itemsStepTabReference[0].nativeElement.offsetTop) {
+        if (this.stepLi[this.stepLi.length - 1].nativeElement.offsetTop !== this.stepLi[0].nativeElement.offsetTop) {
             this.isOver = true;
         }
         else {
@@ -3300,51 +3113,17 @@ var StepComponent = /** @class */ (function () {
         }
         this.cdr.detectChanges();
     };
-    /* AFTER VIEW CHECK */
-    /* AFTER VIEW CHECK */
-    /**
-     * @return {?}
-     */
-    StepComponent.prototype.ngAfterViewChecked = /* AFTER VIEW CHECK */
-    /**
-     * @return {?}
-     */
-    function () {
-        var _this = this;
-        /* For Each items */
-        this.itemStepTab.forEach(function (StepItemComponentBis, index) {
-            /* if after the active item, add class future */
-            if (index + 1 > _this.theActiveStepItem) {
-                StepItemComponentBis.Future = true;
-            }
-            else {
-                StepItemComponentBis.Future = false;
-            }
-            /* if before the active item, add class past */
-            if (index + 1 < _this.theActiveStepItem) {
-                StepItemComponentBis.Past = true;
-            }
-            else {
-                StepItemComponentBis.Past = false;
-            }
-        });
-    };
-    /* Resize breakpoint tab*/
-    /* Resize breakpoint tab*/
     /**
      * @param {?} event
      * @return {?}
      */
-    StepComponent.prototype.onResize = /* Resize breakpoint tab*/
-    /**
+    StepComponent.prototype.onResize = /**
      * @param {?} event
      * @return {?}
      */
     function (event) {
-        if (this.itemsStepTabReference[this.itemsStepTabReference.length - 1].nativeElement.offsetTop >
-            this.itemsStepTabReference[0].nativeElement.offsetTop) {
-            if (this.itemsStepTabReference[this.itemsStepTabReference.length - 1].nativeElement.offsetTop >
-                this.itemsStepTabReference[0].nativeElement.offsetTop &&
+        if (this.stepLi[this.stepLi.length - 1].nativeElement.offsetTop > this.stepLi[0].nativeElement.offsetTop) {
+            if (this.stepLi[this.stepLi.length - 1].nativeElement.offsetTop > this.stepLi[0].nativeElement.offsetTop &&
                 this.isOver !== true) {
                 this.widthBreak = event.target.innerWidth;
                 this.isOver = true;
@@ -3366,27 +3145,12 @@ var StepComponent = /** @class */ (function () {
         }
         this.cdr.detectChanges();
     };
-    /* ADD AN ITEM INTO ITEMS TAB */
-    /* ADD AN ITEM INTO ITEMS TAB */
-    /**
-     * @param {?} stepItem
-     * @return {?}
-     */
-    StepComponent.prototype.addTab = /* ADD AN ITEM INTO ITEMS TAB */
-    /**
-     * @param {?} stepItem
-     * @return {?}
-     */
-    function (stepItem) {
-        stepItem.isActive = false; // And set isActive var to False
-        this.itemStepTab.push(stepItem);
-    };
     StepComponent.decorators = [
         { type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Component"], args: [{
                     selector: 'c3m-step',
-                    template: "<!-- Items List -->\n<ol #items [ngClass]=\"{ over: isOver }\">\n  <ng-content></ng-content>\n</ol>\n",
+                    template: "<ol [ngClass]=\"{ over: isOver }\">\n  <li\n    #stepLi\n    *ngFor=\"let step of steps; let i = index\"\n    [ngClass]=\"{ active: i === this.indexNum, past: i < this.indexNum, future: i > this.indexNum }\"\n    [c3mStepCurrent]=\"i === this.indexNum\"\n  >\n    <ng-container *ngIf=\"i < this.indexNum\">\n      <a href=\"{{ stepLink }}\">{{ step.title }}</a>\n    </ng-container>\n    <ng-container *ngIf=\"!(i < this.indexNum)\">\n      {{ step.title }}\n    </ng-container>\n  </li>\n</ol>\n",
                     encapsulation: _angular_core__WEBPACK_IMPORTED_MODULE_4__["ViewEncapsulation"].None,
-                    styles: ["c3m-step ol{counter-reset:step}c3m-step ol li{display:inline-block;position:relative;list-style-type:none;font-size:.9em;text-align:center;color:var(--n-dark);background-color:rgba(255,255,255,0);padding:.8em 1em;margin-left:-5px}c3m-step ol li::before{display:block;position:relative;width:1.5em;height:1.5em;line-height:1.5em;font-size:1.2em;content:counter(step);counter-increment:step;text-align:center;color:var(--text-inv);background-color:var(--n-dark);border-radius:1.5em;margin:0 auto .6rem;z-index:2}c3m-step ol li::after{display:block;position:absolute;width:100%;height:5px;top:1.5em;left:0;content:'';background-color:var(--n-dark);z-index:1}c3m-step-item:first-child li::after{width:50%;left:50%}c3m-step-item:last-child li::after{width:50%;left:auto;right:50%}c3m-step ol li.past{color:var(--n-dark);background-color:rgba(255,255,255,0)}c3m-step ol li.past::before{content:'';color:var(--text-inv);background:var(--main-color) url(/assets/img/sprite.svg) 3px -429px no-repeat}c3m-step ol li.past::after{background-color:var(--main-color)}c3m-step ol li.active::before{color:var(--text-inv);background-color:var(--main-color)}c3m-step ol li.active::after{background-color:var(--n-dark);background-image:linear-gradient(90deg,var(--main-color) 50%,var(--n-dark) 50%)}c3m-step ol li.future{color:var(--n-dark);background-color:var(--n-light)}c3m-step ol li.future::before{color:var(--n-light);background-color:var(--n-dark)}c3m-step ol.over li{display:block;width:100%;text-align:left;padding:.5rem}c3m-step ol.over li:before{display:inline-block;margin:0}"]
+                    styles: ["c3m-step ol{counter-reset:step}c3m-step ol li{display:inline-block;position:relative;list-style-type:none;font-size:.9em;text-align:center;color:var(--n-dark);background-color:rgba(255,255,255,0);padding:.8em 1em;margin-left:-5px}c3m-step ol li::before{display:block;position:relative;width:1.5em;height:1.5em;line-height:1.5em;font-size:1.2em;content:counter(step);counter-increment:step;text-align:center;color:var(--text-inv);background-color:var(--n-dark);border-radius:1.5em;margin:0 auto .6rem;z-index:2}c3m-step ol li::after{display:block;position:absolute;width:100%;height:5px;top:1.5em;left:0;content:'';background-color:var(--n-dark);z-index:1}c3m-step ol li:first-child li::after{width:50%;left:50%}c3m-step ol li:last-child li::after{width:50%;left:auto;right:50%}c3m-step ol li.past{color:var(--n-dark);background-color:rgba(255,255,255,0)}c3m-step ol li.past::before{content:'';color:var(--text-inv);background:var(--main-color) url(/assets/img/sprite.svg) 3px -429px no-repeat}c3m-step ol li.past::after{background-color:var(--main-color)}c3m-step ol li.active::before{color:var(--text-inv);background-color:var(--main-color)}c3m-step ol li.active::after{background-color:var(--n-dark);background-image:linear-gradient(90deg,var(--main-color) 50%,var(--n-dark) 50%)}c3m-step ol li.future{color:var(--n-dark);background-color:var(--n-light)}c3m-step ol li.future::before{color:var(--n-light);background-color:var(--n-dark)}c3m-step ol.over li{display:block;width:100%;text-align:left;padding:.5rem}c3m-step ol.over li:before{display:inline-block;margin:0}"]
                 }] }
     ];
     /** @nocollapse */
@@ -3394,6 +3158,10 @@ var StepComponent = /** @class */ (function () {
         { type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["ChangeDetectorRef"] }
     ]; };
     StepComponent.propDecorators = {
+        activeStep: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Input"] }],
+        stepLink: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Input"] }],
+        stepLiReference: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["ViewChildren"], args: ['stepLi',] }],
+        steps: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Input"] }],
         onResize: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["HostListener"], args: ['window:resize', ['$event'],] }]
     };
     return StepComponent;
@@ -3403,110 +3171,9 @@ var StepComponent = /** @class */ (function () {
  * @fileoverview added by tsickle
  * @suppress {checkTypes,extraRequire,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
-var ColumnTableComponent = /** @class */ (function () {
-    function ColumnTableComponent() {
-    }
-    /**
-     * @return {?}
-     */
-    ColumnTableComponent.prototype.ngAfterViewInit = /**
-     * @return {?}
-     */
-    function () {
-        /*const heads = document.querySelectorAll('thead th');
-        const titles = [];
-        for ( let x = 0; x < heads.length ; x++) {
-          titles.push(heads[x].innerHTML);
-        }
-    
-        const bodyTr = document.querySelectorAll('tbody tr');
-    
-        for ( let i = 0; i < bodyTr.length; i++) {
-            const bodyTrTd = bodyTr[i].querySelectorAll('td');
-            for ( let j = 0; j < bodyTrTd.length; j++) {
-    
-                const strong = document.createElement('strong');
-                const title = document.createTextNode(titles[j]);
-                strong.appendChild(title);
-                bodyTrTd[j].insertBefore(strong, bodyTrTd[j].childNodes[0]);
-            }
-        }*/
-    };
-    ColumnTableComponent.decorators = [
-        { type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Component"], args: [{
-                    selector: 'c3m-column-table',
-                    template: "<table>\n  <caption>\n    Responsive Table\n  </caption>\n  <thead>\n    <tr>\n      <th scope=\"col\">Movie Title</th>\n      <th scope=\"col\">Duration</th>\n      <th scope=\"col\">Year</th>\n      <th scope=\"col\">Type</th>\n      <th scope=\"col\">Country</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <th scope=\"row\" data-header=\"Movie Title\">Inception</th>\n      <td data-header=\"Duration\">148</td>\n      <td data-header=\"Year\">2010</td>\n      <td data-header=\"Category\">SF</td>\n      <td data-header=\"Country\">UK</td>\n    </tr>\n    <tr>\n      <th scope=\"row\" data-header=\"Movie Title\">The dark knight</th>\n      <td data-header=\"Duration\">164</td>\n      <td data-header=\"Year\">2012</td>\n      <td data-header=\"Category\">SH</td>\n      <td data-header=\"Country\">USA/UK</td>\n    </tr>\n    <tr>\n      <th scope=\"row\" data-header=\"Movie Title\">Pulp Fiction</th>\n      <td data-header=\"Duration\">154</td>\n      <td data-header=\"Year\">1994</td>\n      <td data-header=\"Category\">Gangster</td>\n      <td data-header=\"Country\">USA</td>\n    </tr>\n  </tbody>\n</table>\n",
-                    encapsulation: _angular_core__WEBPACK_IMPORTED_MODULE_4__["ViewEncapsulation"].None,
-                    styles: ["c3m-column-table table{width:100%;text-align:left}c3m-column-table caption{font:1.5em var(--stack);text-align:left;margin-bottom:.6rem}c3m-column-table td,c3m-column-table th{color:var(--body-text);background-color:var(--body-bg);padding:1rem .5rem}c3m-column-table thead th{font-size:1.3em;border-bottom:2px solid var(--n-dark)}c3m-column-table td{border-bottom:1px solid var(--n-medium)}@media screen and (max-width:1000px){c3m-column-table table{display:block;width:100%;padding:.5rem;border-radius:.3em;border:none}c3m-column-table caption{display:block;font-size:1.5em}c3m-column-table tbody{display:block}c3m-column-table thead{display:none}c3m-column-table tbody tr{display:block;margin-bottom:2rem}c3m-column-table tbody th,c3m-column-table th{background-color:var(--n-light);padding:0 0 .5rem}c3m-column-table td{display:block;background-color:initial;padding:.5rem 0;border:none;border-bottom:1px solid var(--n-medium)}c3m-column-table td::before{display:inline-block;width:45%;content:attr(data-header);padding-right:2rem}c3m-column-table tbody strong{display:inline-block;width:6em;color:#f5f5f5}}"]
-                }] }
-    ];
-    /** @nocollapse */
-    ColumnTableComponent.ctorParameters = function () { return []; };
-    return ColumnTableComponent;
-}());
-
-/**
- * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
- */
-var ToggleTableComponent = /** @class */ (function () {
-    function ToggleTableComponent() {
-    }
-    /**
-     * @return {?}
-     */
-    ToggleTableComponent.prototype.ngOnInit = /**
-     * @return {?}
-     */
-    function () { };
-    ToggleTableComponent.decorators = [
-        { type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Component"], args: [{
-                    selector: 'c3m-toggle-table',
-                    template: "<p>\n  toggle-table works!\n</p>\n",
-                    encapsulation: _angular_core__WEBPACK_IMPORTED_MODULE_4__["ViewEncapsulation"].None,
-                    styles: [""]
-                }] }
-    ];
-    /** @nocollapse */
-    ToggleTableComponent.ctorParameters = function () { return []; };
-    return ToggleTableComponent;
-}());
-
-/**
- * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
- */
-var PageSwipeTableComponent = /** @class */ (function () {
-    function PageSwipeTableComponent() {
-    }
-    /**
-     * @return {?}
-     */
-    PageSwipeTableComponent.prototype.ngOnInit = /**
-     * @return {?}
-     */
-    function () { };
-    PageSwipeTableComponent.decorators = [
-        { type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Component"], args: [{
-                    selector: 'c3m-page-swipe-table',
-                    template: "<p>\n  page-swipe-table works!\n</p>\n",
-                    encapsulation: _angular_core__WEBPACK_IMPORTED_MODULE_4__["ViewEncapsulation"].None,
-                    styles: [""]
-                }] }
-    ];
-    /** @nocollapse */
-    PageSwipeTableComponent.ctorParameters = function () { return []; };
-    return PageSwipeTableComponent;
-}());
-
-/**
- * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
- */
 var TabComponent = /** @class */ (function () {
     /* Constructor Tab Component */
     function TabComponent(tabs) {
-        tabs.addTab(this);
         this.idTab = this.randomID();
     }
     /* ID for Accessbility */
@@ -3549,7 +3216,7 @@ var TabComponent = /** @class */ (function () {
     TabComponent.decorators = [
         { type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Component"], args: [{
                     selector: 'c3m-tab',
-                    template: "<div class=\"content\" [attr.aria-hidden]=\"!isActive\" [attr.aria-labeledby]=\"tabID\" id=\"{{ panelID }}\">\n  <ng-content></ng-content>\n</div>\n",
+                    template: "<div [hidden]=\"!active\" class=\"content\" [attr.aria-hidden]=\"!active\" [attr.aria-labeledby]=\"tabID\" id=\"{{ panelID }}\">\n  <ng-content></ng-content>\n</div>\n",
                     encapsulation: _angular_core__WEBPACK_IMPORTED_MODULE_4__["ViewEncapsulation"].None,
                     styles: [""]
                 }] }
@@ -3560,7 +3227,7 @@ var TabComponent = /** @class */ (function () {
     ]; };
     TabComponent.propDecorators = {
         tabTitle: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Input"] }],
-        isActive: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Input"] }],
+        active: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Input"] }],
         idTab: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Input"] }],
         isDisabled: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Input"] }]
     };
@@ -3572,70 +3239,29 @@ var TabComponent = /** @class */ (function () {
  * @suppress {checkTypes,extraRequire,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 var TabsComponent = /** @class */ (function () {
-    /* constructor tab */
     function TabsComponent(cdr) {
         this.cdr = cdr;
-        /* Variables */
-        this.tabs = [];
         this.sizeInit = 0;
-        this.arrayTmp = [];
-        this.startIndexActiv = 0;
-        this.TabComponentBis = TabComponent;
     }
-    /* Resize breakpoint tab */
-    /* Resize breakpoint tab */
+    // contentChildren are set
+    // contentChildren are set
     /**
-     * @param {?} event
      * @return {?}
      */
-    TabsComponent.prototype.onResize = /* Resize breakpoint tab */
+    TabsComponent.prototype.ngAfterContentInit = 
+    // contentChildren are set
     /**
-     * @param {?} event
      * @return {?}
      */
-    function (event) {
-        if (this.tabsElement.length === 1 ||
-            this.tabsElement.last.nativeElement.offsetTop === this.tabsElement.first.nativeElement.offsetTop) {
-            this.isOver = true;
+    function () {
+        this.isOver = true;
+        // get all active tabs
+        /** @type {?} */
+        var activeTabs = this.tabs.filter(function (tab) { return tab.active; });
+        // if there is no active tab set, activate the first
+        if (activeTabs.length === 0) {
+            this.selectTab(this.tabs.first);
         }
-        else {
-            this.isOver = false;
-        }
-        this.cdr.detectChanges();
-    };
-    /* add tab to tab table and select tab active */
-    /* add tab to tab table and select tab active */
-    /**
-     * @param {?} tab
-     * @return {?}
-     */
-    TabsComponent.prototype.addTab = /* add tab to tab table and select tab active */
-    /**
-     * @param {?} tab
-     * @return {?}
-     */
-    function (tab) {
-        if (this.tabs.length === this.startIndexActiv) {
-            tab.isActive = true;
-        }
-        this.tabs.push(tab);
-    };
-    /* close tabs et open the active tab */
-    /* close tabs et open the active tab */
-    /**
-     * @param {?} tab
-     * @return {?}
-     */
-    TabsComponent.prototype.selectTab = /* close tabs et open the active tab */
-    /**
-     * @param {?} tab
-     * @return {?}
-     */
-    function (tab) {
-        this.tabs.forEach(function (TabComponentBis) {
-            TabComponentBis.isActive = false;
-        });
-        tab.isActive = true;
     };
     /* breakpoint tab */
     /* breakpoint tab */
@@ -3648,26 +3274,62 @@ var TabsComponent = /** @class */ (function () {
      */
     function () {
         this.arrayTmp = this.tabsElement.toArray();
-        for (var i = 0; i < this.arrayTmp.length - 1; i++) {
-            this.sizeInit = this.arrayTmp[i].nativeElement.clientWidth + this.sizeInit;
+        for (var i = 0; i < this.arrayTmp.length; i++) {
+            this.sizeInit += this.arrayTmp[i].nativeElement.clientWidth;
         }
         if (this.tabsElement.last.nativeElement.offsetTop !== this.tabsElement.first.nativeElement.offsetTop) {
-            this.isOver = true;
-        }
-        else if (this.tabsElement.length === 1) {
-            this.isOver = true;
-        }
-        else {
             this.isOver = false;
         }
+        else if (this.tabsElement.length === 1) {
+            this.isOver = false;
+        }
+        else {
+            this.isOver = true;
+        }
         this.cdr.detectChanges();
+    };
+    /**
+     * @param {?} event
+     * @return {?}
+     */
+    TabsComponent.prototype.onResize = /**
+     * @param {?} event
+     * @return {?}
+     */
+    function (event) {
+        if (this.tabsElement.last.nativeElement.offsetTop !== this.tabsElement.first.nativeElement.offsetTop) {
+            this.isOver = false;
+            if (this.sizeInit +
+                parseFloat(getComputedStyle(this.tabsElement.last.nativeElement).marginRight) * this.tabsElement.length <
+                this.container.nativeElement.clientWidth) {
+                this.isOver = true;
+            }
+        }
+        else {
+            this.isOver = true;
+        }
+        this.cdr.detectChanges();
+    };
+    /**
+     * @param {?} tab
+     * @return {?}
+     */
+    TabsComponent.prototype.selectTab = /**
+     * @param {?} tab
+     * @return {?}
+     */
+    function (tab) {
+        // deactivate all tabs
+        this.tabs.toArray().forEach(function (t) { return (t.active = false); });
+        // activate the tab the user has clicked on.
+        tab.active = true;
     };
     TabsComponent.decorators = [
         { type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["Component"], args: [{
                     selector: 'c3m-tabs',
-                    template: "<div class=\"tabsContainer\">\n  <ul>\n    <li #tabs *ngFor=\"let tab of tabs\" [ngClass]=\"{ active: tab.isActive, over: isOver }\">\n      <button\n        id=\"{{ tab.tabID }}\"\n        (click)=\"selectTab(tab)\"\n        [attr.aria-expanded]=\"tab.isActive\"\n        [attr.aria-controls]=\"tab.panelID\"\n        [attr.aria-selected]=\"tab.isActive\"\n      >\n        {{ tab.tabTitle }}\n      </button>\n    </li>\n  </ul>\n\n  <ng-content></ng-content>\n</div>\n",
+                    template: "<div class=\"tabsContainer\" #container>\n  <ul>\n    <li #tabs *ngFor=\"let tab of tabs\" [ngClass]=\"{ active: tab.active, over: isOver }\">\n      <button\n        id=\"{{ tab.tabID }}\"\n        (click)=\"selectTab(tab)\"\n        [attr.aria-expanded]=\"tab.isActive\"\n        [attr.aria-controls]=\"tab.panelID\"\n        [attr.aria-selected]=\"tab.isActive\"\n      >\n        {{ tab.tabTitle }}\n      </button>\n    </li>\n  </ul>\n  <ng-content></ng-content>\n</div>\n",
                     encapsulation: _angular_core__WEBPACK_IMPORTED_MODULE_4__["ViewEncapsulation"].None,
-                    styles: [".tabsContainer{margin:2rem 0}.tabsContainer>ul li button{width:100%;font-family:var(--stack-b);text-align:left;background-color:var(--n-light);padding:.5em 1em}.tabsContainer>ul li button:focus,.tabsContainer>ul li button:hover,.tabsContainer>ul li.active button{color:var(--text-inv);background-color:var(--main-color)}c3m-tab .content[aria-hidden=false]{background-color:var(--n-light);padding:1rem}c3m-tab .content[aria-hidden=true]{display:none}.tabsContainer>ul li.over{display:inline-block;margin-right:.5rem}.tabsContainer>ul li.over button{background-color:var(--body-bg);border-radius:0}.tabsContainer>ul li.over button:focus,.tabsContainer>ul li.over button:hover,.tabsContainer>ul li.over.active button{color:var(--body-text);background-color:var(--n-light)}@media screen and (min-width:850px){.tabsContainer>ul li{font-size:1.2rem}c3m-tab .content[aria-hidden=false]{padding:2rem}}"]
+                    styles: [".tabsContainer{margin:2rem 0}.tabsContainer ul li button{width:100%;font-family:var(--stack-b);text-align:left;background-color:var(--n-light);padding:.5em 1em}.tabsContainer ul li button:focus,.tabsContainer ul li button:hover,.tabsContainer ul li.active button{color:var(--text-inv);background-color:var(--main-color)}c3m-tab .content{background-color:var(--n-light);padding:1rem}c3m-tab .content[hidden]{display:none}.tabsContainer ul li.over{display:inline-block;margin-right:.5rem}.tabsContainer ul li.over button{background-color:var(--body-bg);border-radius:0}.tabsContainer ul li.over button:focus,.tabsContainer ul li.over button:hover,.tabsContainer ul li.over.active button{color:var(--body-text);background-color:var(--n-light)}@media screen and (min-width:850px){.tabsContainer ul li{font-size:1.2rem}c3m-tab .content{padding:2rem}}"]
                 }] }
     ];
     /** @nocollapse */
@@ -3675,8 +3337,9 @@ var TabsComponent = /** @class */ (function () {
         { type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["ChangeDetectorRef"] }
     ]; };
     TabsComponent.propDecorators = {
+        tabs: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["ContentChildren"], args: [TabComponent,] }],
         tabsElement: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["ViewChildren"], args: ['tabs',] }],
-        tabComponents: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["ContentChildren"], args: [TabComponent,] }],
+        container: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["ViewChild"], args: ['container',] }],
         onResize: [{ type: _angular_core__WEBPACK_IMPORTED_MODULE_4__["HostListener"], args: ['window:resize', ['$event'],] }]
     };
     return TabsComponent;
@@ -4085,6 +3748,11 @@ var ButtonLinkComponent = /** @class */ (function () {
  * @fileoverview added by tsickle
  * @suppress {checkTypes,extraRequire,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
 var ModalDirective = /** @class */ (function () {
     function ModalDirective(el, renderer) {
         this.el = el;
@@ -4309,10 +3977,6 @@ var CreamnglibModule = /** @class */ (function () {
                         ProgressComponent,
                         SpinnerProgressComponent,
                         StepComponent,
-                        StepItemComponent,
-                        ColumnTableComponent,
-                        ToggleTableComponent,
-                        PageSwipeTableComponent,
                         TabsComponent,
                         TabComponent,
                         PaginationComponent,
@@ -4368,10 +4032,6 @@ var CreamnglibModule = /** @class */ (function () {
                         ProgressComponent,
                         SpinnerProgressComponent,
                         StepComponent,
-                        StepItemComponent,
-                        ColumnTableComponent,
-                        ToggleTableComponent,
-                        PageSwipeTableComponent,
                         TabsComponent,
                         TabComponent,
                         PaginationComponent,
@@ -4692,30 +4352,28 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _header_menu_menu_item_menu_item_component__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./header/menu/menu-item/menu-item.component */ "./src/app/header/menu/menu-item/menu-item.component.ts");
 /* harmony import */ var _main_carousel_page_carousel_page_component__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./main/carousel-page/carousel-page.component */ "./src/app/main/carousel-page/carousel-page.component.ts");
 /* harmony import */ var _main_modal_page_modal_page_component__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./main/modal-page/modal-page.component */ "./src/app/main/modal-page/modal-page.component.ts");
-/* harmony import */ var _main_table_page_table_page_component__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./main/table-page/table-page.component */ "./src/app/main/table-page/table-page.component.ts");
-/* harmony import */ var _main_pagination_page_pagination_page_component__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./main/pagination-page/pagination-page.component */ "./src/app/main/pagination-page/pagination-page.component.ts");
-/* harmony import */ var _main_slider_page_slider_page_component__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./main/slider-page/slider-page.component */ "./src/app/main/slider-page/slider-page.component.ts");
-/* harmony import */ var _main_getting_started_getting_started_component__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./main/getting-started/getting-started.component */ "./src/app/main/getting-started/getting-started.component.ts");
-/* harmony import */ var _main_step_page_step_page_component__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./main/step-page/step-page.component */ "./src/app/main/step-page/step-page.component.ts");
-/* harmony import */ var _main_calendar_page_calendar_page_component__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./main/calendar-page/calendar-page.component */ "./src/app/main/calendar-page/calendar-page.component.ts");
-/* harmony import */ var _main_dropdown_page_dropdown_page_component__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ./main/dropdown-page/dropdown-page.component */ "./src/app/main/dropdown-page/dropdown-page.component.ts");
-/* harmony import */ var _main_input_page_input_page_component__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ./main/input-page/input-page.component */ "./src/app/main/input-page/input-page.component.ts");
-/* harmony import */ var _main_checkbox_page_checkbox_page_component__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! ./main/checkbox-page/checkbox-page.component */ "./src/app/main/checkbox-page/checkbox-page.component.ts");
-/* harmony import */ var _main_select_page_select_page_component__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! ./main/select-page/select-page.component */ "./src/app/main/select-page/select-page.component.ts");
-/* harmony import */ var _main_faq_faq_component__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! ./main/faq/faq.component */ "./src/app/main/faq/faq.component.ts");
-/* harmony import */ var _main_breadcrumbs_page_breadcrumbs_page_component__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(/*! ./main/breadcrumbs-page/breadcrumbs-page.component */ "./src/app/main/breadcrumbs-page/breadcrumbs-page.component.ts");
-/* harmony import */ var _main_fieldset_page_fieldset_page_component__WEBPACK_IMPORTED_MODULE_32__ = __webpack_require__(/*! ./main/fieldset-page/fieldset-page.component */ "./src/app/main/fieldset-page/fieldset-page.component.ts");
-/* harmony import */ var _main_list_page_list_page_component__WEBPACK_IMPORTED_MODULE_33__ = __webpack_require__(/*! ./main/list-page/list-page.component */ "./src/app/main/list-page/list-page.component.ts");
-/* harmony import */ var _main_skip_page_skip_page_component__WEBPACK_IMPORTED_MODULE_34__ = __webpack_require__(/*! ./main/skip-page/skip-page.component */ "./src/app/main/skip-page/skip-page.component.ts");
-/* harmony import */ var _main_toast_page_toast_page_component__WEBPACK_IMPORTED_MODULE_35__ = __webpack_require__(/*! ./main/toast-page/toast-page.component */ "./src/app/main/toast-page/toast-page.component.ts");
-/* harmony import */ var _main_bottom_page_bottom_page_component__WEBPACK_IMPORTED_MODULE_36__ = __webpack_require__(/*! ./main/bottom-page/bottom-page.component */ "./src/app/main/bottom-page/bottom-page.component.ts");
-/* harmony import */ var _main_bottom_page_bottom_bottom_component__WEBPACK_IMPORTED_MODULE_37__ = __webpack_require__(/*! ./main/bottom-page/bottom/bottom.component */ "./src/app/main/bottom-page/bottom/bottom.component.ts");
-/* harmony import */ var _main_radio_page_radio_page_component__WEBPACK_IMPORTED_MODULE_38__ = __webpack_require__(/*! ./main/radio-page/radio-page.component */ "./src/app/main/radio-page/radio-page.component.ts");
-/* harmony import */ var _app_routes__WEBPACK_IMPORTED_MODULE_39__ = __webpack_require__(/*! ./app.routes */ "./src/app/app.routes.ts");
-/* harmony import */ var _main_card_page_card_page_component__WEBPACK_IMPORTED_MODULE_40__ = __webpack_require__(/*! ./main/card-page/card-page.component */ "./src/app/main/card-page/card-page.component.ts");
-/* harmony import */ var _main_card_page_card_card_component__WEBPACK_IMPORTED_MODULE_41__ = __webpack_require__(/*! ./main/card-page/card/card.component */ "./src/app/main/card-page/card/card.component.ts");
-/* harmony import */ var creamnglib__WEBPACK_IMPORTED_MODULE_42__ = __webpack_require__(/*! creamnglib */ "./dist/creamnglib/fesm5/creamlib-ng.js");
-
+/* harmony import */ var _main_pagination_page_pagination_page_component__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./main/pagination-page/pagination-page.component */ "./src/app/main/pagination-page/pagination-page.component.ts");
+/* harmony import */ var _main_slider_page_slider_page_component__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./main/slider-page/slider-page.component */ "./src/app/main/slider-page/slider-page.component.ts");
+/* harmony import */ var _main_getting_started_getting_started_component__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./main/getting-started/getting-started.component */ "./src/app/main/getting-started/getting-started.component.ts");
+/* harmony import */ var _main_step_page_step_page_component__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./main/step-page/step-page.component */ "./src/app/main/step-page/step-page.component.ts");
+/* harmony import */ var _main_calendar_page_calendar_page_component__WEBPACK_IMPORTED_MODULE_24__ = __webpack_require__(/*! ./main/calendar-page/calendar-page.component */ "./src/app/main/calendar-page/calendar-page.component.ts");
+/* harmony import */ var _main_dropdown_page_dropdown_page_component__WEBPACK_IMPORTED_MODULE_25__ = __webpack_require__(/*! ./main/dropdown-page/dropdown-page.component */ "./src/app/main/dropdown-page/dropdown-page.component.ts");
+/* harmony import */ var _main_input_page_input_page_component__WEBPACK_IMPORTED_MODULE_26__ = __webpack_require__(/*! ./main/input-page/input-page.component */ "./src/app/main/input-page/input-page.component.ts");
+/* harmony import */ var _main_checkbox_page_checkbox_page_component__WEBPACK_IMPORTED_MODULE_27__ = __webpack_require__(/*! ./main/checkbox-page/checkbox-page.component */ "./src/app/main/checkbox-page/checkbox-page.component.ts");
+/* harmony import */ var _main_select_page_select_page_component__WEBPACK_IMPORTED_MODULE_28__ = __webpack_require__(/*! ./main/select-page/select-page.component */ "./src/app/main/select-page/select-page.component.ts");
+/* harmony import */ var _main_faq_faq_component__WEBPACK_IMPORTED_MODULE_29__ = __webpack_require__(/*! ./main/faq/faq.component */ "./src/app/main/faq/faq.component.ts");
+/* harmony import */ var _main_breadcrumbs_page_breadcrumbs_page_component__WEBPACK_IMPORTED_MODULE_30__ = __webpack_require__(/*! ./main/breadcrumbs-page/breadcrumbs-page.component */ "./src/app/main/breadcrumbs-page/breadcrumbs-page.component.ts");
+/* harmony import */ var _main_fieldset_page_fieldset_page_component__WEBPACK_IMPORTED_MODULE_31__ = __webpack_require__(/*! ./main/fieldset-page/fieldset-page.component */ "./src/app/main/fieldset-page/fieldset-page.component.ts");
+/* harmony import */ var _main_list_page_list_page_component__WEBPACK_IMPORTED_MODULE_32__ = __webpack_require__(/*! ./main/list-page/list-page.component */ "./src/app/main/list-page/list-page.component.ts");
+/* harmony import */ var _main_skip_page_skip_page_component__WEBPACK_IMPORTED_MODULE_33__ = __webpack_require__(/*! ./main/skip-page/skip-page.component */ "./src/app/main/skip-page/skip-page.component.ts");
+/* harmony import */ var _main_toast_page_toast_page_component__WEBPACK_IMPORTED_MODULE_34__ = __webpack_require__(/*! ./main/toast-page/toast-page.component */ "./src/app/main/toast-page/toast-page.component.ts");
+/* harmony import */ var _main_bottom_page_bottom_page_component__WEBPACK_IMPORTED_MODULE_35__ = __webpack_require__(/*! ./main/bottom-page/bottom-page.component */ "./src/app/main/bottom-page/bottom-page.component.ts");
+/* harmony import */ var _main_bottom_page_bottom_bottom_component__WEBPACK_IMPORTED_MODULE_36__ = __webpack_require__(/*! ./main/bottom-page/bottom/bottom.component */ "./src/app/main/bottom-page/bottom/bottom.component.ts");
+/* harmony import */ var _main_radio_page_radio_page_component__WEBPACK_IMPORTED_MODULE_37__ = __webpack_require__(/*! ./main/radio-page/radio-page.component */ "./src/app/main/radio-page/radio-page.component.ts");
+/* harmony import */ var _app_routes__WEBPACK_IMPORTED_MODULE_38__ = __webpack_require__(/*! ./app.routes */ "./src/app/app.routes.ts");
+/* harmony import */ var _main_card_page_card_page_component__WEBPACK_IMPORTED_MODULE_39__ = __webpack_require__(/*! ./main/card-page/card-page.component */ "./src/app/main/card-page/card-page.component.ts");
+/* harmony import */ var _main_card_page_card_card_component__WEBPACK_IMPORTED_MODULE_40__ = __webpack_require__(/*! ./main/card-page/card/card.component */ "./src/app/main/card-page/card/card.component.ts");
+/* harmony import */ var creamnglib__WEBPACK_IMPORTED_MODULE_41__ = __webpack_require__(/*! creamnglib */ "./dist/creamnglib/fesm5/creamlib-ng.js");
 
 
 
@@ -4777,36 +4435,35 @@ var AppModule = /** @class */ (function () {
                 _header_menu_menu_item_menu_item_component__WEBPACK_IMPORTED_MODULE_17__["MenuItemComponent"],
                 _main_carousel_page_carousel_page_component__WEBPACK_IMPORTED_MODULE_18__["CarouselPageComponent"],
                 _main_modal_page_modal_page_component__WEBPACK_IMPORTED_MODULE_19__["ModalPageComponent"],
-                _main_table_page_table_page_component__WEBPACK_IMPORTED_MODULE_20__["TablePageComponent"],
-                _main_pagination_page_pagination_page_component__WEBPACK_IMPORTED_MODULE_21__["PaginationPageComponent"],
-                _main_slider_page_slider_page_component__WEBPACK_IMPORTED_MODULE_22__["SliderPageComponent"],
-                _main_getting_started_getting_started_component__WEBPACK_IMPORTED_MODULE_23__["GettingStartedComponent"],
-                _main_step_page_step_page_component__WEBPACK_IMPORTED_MODULE_24__["StepPageComponent"],
-                _main_calendar_page_calendar_page_component__WEBPACK_IMPORTED_MODULE_25__["CalendarPageComponent"],
-                _main_dropdown_page_dropdown_page_component__WEBPACK_IMPORTED_MODULE_26__["DropdownPageComponent"],
-                _main_input_page_input_page_component__WEBPACK_IMPORTED_MODULE_27__["InputPageComponent"],
-                _main_checkbox_page_checkbox_page_component__WEBPACK_IMPORTED_MODULE_28__["CheckboxPageComponent"],
-                _main_select_page_select_page_component__WEBPACK_IMPORTED_MODULE_29__["SelectPageComponent"],
-                _main_faq_faq_component__WEBPACK_IMPORTED_MODULE_30__["FaqComponent"],
-                _main_breadcrumbs_page_breadcrumbs_page_component__WEBPACK_IMPORTED_MODULE_31__["BreadcrumbsPageComponent"],
-                _main_fieldset_page_fieldset_page_component__WEBPACK_IMPORTED_MODULE_32__["FieldsetPageComponent"],
-                _main_list_page_list_page_component__WEBPACK_IMPORTED_MODULE_33__["ListPageComponent"],
-                _main_skip_page_skip_page_component__WEBPACK_IMPORTED_MODULE_34__["SkipPageComponent"],
-                _main_toast_page_toast_page_component__WEBPACK_IMPORTED_MODULE_35__["ToastPageComponent"],
-                _main_bottom_page_bottom_page_component__WEBPACK_IMPORTED_MODULE_36__["BottomPageComponent"],
-                _main_bottom_page_bottom_bottom_component__WEBPACK_IMPORTED_MODULE_37__["BottomComponent"],
-                _main_radio_page_radio_page_component__WEBPACK_IMPORTED_MODULE_38__["RadioPageComponent"],
-                _main_card_page_card_page_component__WEBPACK_IMPORTED_MODULE_40__["CardPageComponent"],
-                _main_card_page_card_card_component__WEBPACK_IMPORTED_MODULE_41__["CardComponent"]
+                _main_pagination_page_pagination_page_component__WEBPACK_IMPORTED_MODULE_20__["PaginationPageComponent"],
+                _main_slider_page_slider_page_component__WEBPACK_IMPORTED_MODULE_21__["SliderPageComponent"],
+                _main_getting_started_getting_started_component__WEBPACK_IMPORTED_MODULE_22__["GettingStartedComponent"],
+                _main_step_page_step_page_component__WEBPACK_IMPORTED_MODULE_23__["StepPageComponent"],
+                _main_calendar_page_calendar_page_component__WEBPACK_IMPORTED_MODULE_24__["CalendarPageComponent"],
+                _main_dropdown_page_dropdown_page_component__WEBPACK_IMPORTED_MODULE_25__["DropdownPageComponent"],
+                _main_input_page_input_page_component__WEBPACK_IMPORTED_MODULE_26__["InputPageComponent"],
+                _main_checkbox_page_checkbox_page_component__WEBPACK_IMPORTED_MODULE_27__["CheckboxPageComponent"],
+                _main_select_page_select_page_component__WEBPACK_IMPORTED_MODULE_28__["SelectPageComponent"],
+                _main_faq_faq_component__WEBPACK_IMPORTED_MODULE_29__["FaqComponent"],
+                _main_breadcrumbs_page_breadcrumbs_page_component__WEBPACK_IMPORTED_MODULE_30__["BreadcrumbsPageComponent"],
+                _main_fieldset_page_fieldset_page_component__WEBPACK_IMPORTED_MODULE_31__["FieldsetPageComponent"],
+                _main_list_page_list_page_component__WEBPACK_IMPORTED_MODULE_32__["ListPageComponent"],
+                _main_skip_page_skip_page_component__WEBPACK_IMPORTED_MODULE_33__["SkipPageComponent"],
+                _main_toast_page_toast_page_component__WEBPACK_IMPORTED_MODULE_34__["ToastPageComponent"],
+                _main_bottom_page_bottom_page_component__WEBPACK_IMPORTED_MODULE_35__["BottomPageComponent"],
+                _main_bottom_page_bottom_bottom_component__WEBPACK_IMPORTED_MODULE_36__["BottomComponent"],
+                _main_radio_page_radio_page_component__WEBPACK_IMPORTED_MODULE_37__["RadioPageComponent"],
+                _main_card_page_card_page_component__WEBPACK_IMPORTED_MODULE_39__["CardPageComponent"],
+                _main_card_page_card_card_component__WEBPACK_IMPORTED_MODULE_40__["CardComponent"]
             ],
             imports: [
                 _angular_platform_browser__WEBPACK_IMPORTED_MODULE_6__["BrowserModule"],
                 _angular_platform_browser_animations__WEBPACK_IMPORTED_MODULE_7__["BrowserAnimationsModule"],
                 _angular_http__WEBPACK_IMPORTED_MODULE_1__["HttpModule"],
                 ng2_scroll_to__WEBPACK_IMPORTED_MODULE_4__["ScrollToModule"].forRoot(),
-                _angular_router__WEBPACK_IMPORTED_MODULE_12__["RouterModule"].forRoot(_app_routes__WEBPACK_IMPORTED_MODULE_39__["appRoutes"], _app_routes__WEBPACK_IMPORTED_MODULE_39__["routerOptions"]),
+                _angular_router__WEBPACK_IMPORTED_MODULE_12__["RouterModule"].forRoot(_app_routes__WEBPACK_IMPORTED_MODULE_38__["appRoutes"], _app_routes__WEBPACK_IMPORTED_MODULE_38__["routerOptions"]),
                 _module_breadcrumbs__WEBPACK_IMPORTED_MODULE_5__["BreadcrumbsModule"],
-                creamnglib__WEBPACK_IMPORTED_MODULE_42__["CreamnglibModule"]
+                creamnglib__WEBPACK_IMPORTED_MODULE_41__["CreamnglibModule"]
             ],
             schemas: [_angular_core__WEBPACK_IMPORTED_MODULE_2__["NO_ERRORS_SCHEMA"]],
             exports: [_angular_router__WEBPACK_IMPORTED_MODULE_12__["RouterModule"]],
@@ -4837,25 +4494,23 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _main_accordion_page_accordion_page_component__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! ./main/accordion-page/accordion-page.component */ "./src/app/main/accordion-page/accordion-page.component.ts");
 /* harmony import */ var _main_modal_page_modal_page_component__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! ./main/modal-page/modal-page.component */ "./src/app/main/modal-page/modal-page.component.ts");
 /* harmony import */ var _main_carousel_page_carousel_page_component__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(/*! ./main/carousel-page/carousel-page.component */ "./src/app/main/carousel-page/carousel-page.component.ts");
-/* harmony import */ var _main_table_page_table_page_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./main/table-page/table-page.component */ "./src/app/main/table-page/table-page.component.ts");
-/* harmony import */ var _main_pagination_page_pagination_page_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./main/pagination-page/pagination-page.component */ "./src/app/main/pagination-page/pagination-page.component.ts");
-/* harmony import */ var _main_slider_page_slider_page_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./main/slider-page/slider-page.component */ "./src/app/main/slider-page/slider-page.component.ts");
-/* harmony import */ var _main_getting_started_getting_started_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./main/getting-started/getting-started.component */ "./src/app/main/getting-started/getting-started.component.ts");
-/* harmony import */ var _main_faq_faq_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./main/faq/faq.component */ "./src/app/main/faq/faq.component.ts");
-/* harmony import */ var _main_step_page_step_page_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./main/step-page/step-page.component */ "./src/app/main/step-page/step-page.component.ts");
-/* harmony import */ var _main_calendar_page_calendar_page_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./main/calendar-page/calendar-page.component */ "./src/app/main/calendar-page/calendar-page.component.ts");
-/* harmony import */ var _main_dropdown_page_dropdown_page_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./main/dropdown-page/dropdown-page.component */ "./src/app/main/dropdown-page/dropdown-page.component.ts");
-/* harmony import */ var _main_input_page_input_page_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./main/input-page/input-page.component */ "./src/app/main/input-page/input-page.component.ts");
-/* harmony import */ var _main_checkbox_page_checkbox_page_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./main/checkbox-page/checkbox-page.component */ "./src/app/main/checkbox-page/checkbox-page.component.ts");
-/* harmony import */ var _main_radio_page_radio_page_component__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./main/radio-page/radio-page.component */ "./src/app/main/radio-page/radio-page.component.ts");
-/* harmony import */ var _main_select_page_select_page_component__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./main/select-page/select-page.component */ "./src/app/main/select-page/select-page.component.ts");
-/* harmony import */ var _main_fieldset_page_fieldset_page_component__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./main/fieldset-page/fieldset-page.component */ "./src/app/main/fieldset-page/fieldset-page.component.ts");
-/* harmony import */ var _main_skip_page_skip_page_component__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./main/skip-page/skip-page.component */ "./src/app/main/skip-page/skip-page.component.ts");
-/* harmony import */ var _main_toast_page_toast_page_component__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./main/toast-page/toast-page.component */ "./src/app/main/toast-page/toast-page.component.ts");
-/* harmony import */ var _main_list_page_list_page_component__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./main/list-page/list-page.component */ "./src/app/main/list-page/list-page.component.ts");
-/* harmony import */ var _main_bottom_page_bottom_page_component__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./main/bottom-page/bottom-page.component */ "./src/app/main/bottom-page/bottom-page.component.ts");
-/* harmony import */ var _main_breadcrumbs_page_breadcrumbs_page_component__WEBPACK_IMPORTED_MODULE_23__ = __webpack_require__(/*! ./main/breadcrumbs-page/breadcrumbs-page.component */ "./src/app/main/breadcrumbs-page/breadcrumbs-page.component.ts");
-
+/* harmony import */ var _main_pagination_page_pagination_page_component__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(/*! ./main/pagination-page/pagination-page.component */ "./src/app/main/pagination-page/pagination-page.component.ts");
+/* harmony import */ var _main_slider_page_slider_page_component__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(/*! ./main/slider-page/slider-page.component */ "./src/app/main/slider-page/slider-page.component.ts");
+/* harmony import */ var _main_getting_started_getting_started_component__WEBPACK_IMPORTED_MODULE_8__ = __webpack_require__(/*! ./main/getting-started/getting-started.component */ "./src/app/main/getting-started/getting-started.component.ts");
+/* harmony import */ var _main_faq_faq_component__WEBPACK_IMPORTED_MODULE_9__ = __webpack_require__(/*! ./main/faq/faq.component */ "./src/app/main/faq/faq.component.ts");
+/* harmony import */ var _main_step_page_step_page_component__WEBPACK_IMPORTED_MODULE_10__ = __webpack_require__(/*! ./main/step-page/step-page.component */ "./src/app/main/step-page/step-page.component.ts");
+/* harmony import */ var _main_calendar_page_calendar_page_component__WEBPACK_IMPORTED_MODULE_11__ = __webpack_require__(/*! ./main/calendar-page/calendar-page.component */ "./src/app/main/calendar-page/calendar-page.component.ts");
+/* harmony import */ var _main_dropdown_page_dropdown_page_component__WEBPACK_IMPORTED_MODULE_12__ = __webpack_require__(/*! ./main/dropdown-page/dropdown-page.component */ "./src/app/main/dropdown-page/dropdown-page.component.ts");
+/* harmony import */ var _main_input_page_input_page_component__WEBPACK_IMPORTED_MODULE_13__ = __webpack_require__(/*! ./main/input-page/input-page.component */ "./src/app/main/input-page/input-page.component.ts");
+/* harmony import */ var _main_checkbox_page_checkbox_page_component__WEBPACK_IMPORTED_MODULE_14__ = __webpack_require__(/*! ./main/checkbox-page/checkbox-page.component */ "./src/app/main/checkbox-page/checkbox-page.component.ts");
+/* harmony import */ var _main_radio_page_radio_page_component__WEBPACK_IMPORTED_MODULE_15__ = __webpack_require__(/*! ./main/radio-page/radio-page.component */ "./src/app/main/radio-page/radio-page.component.ts");
+/* harmony import */ var _main_select_page_select_page_component__WEBPACK_IMPORTED_MODULE_16__ = __webpack_require__(/*! ./main/select-page/select-page.component */ "./src/app/main/select-page/select-page.component.ts");
+/* harmony import */ var _main_fieldset_page_fieldset_page_component__WEBPACK_IMPORTED_MODULE_17__ = __webpack_require__(/*! ./main/fieldset-page/fieldset-page.component */ "./src/app/main/fieldset-page/fieldset-page.component.ts");
+/* harmony import */ var _main_skip_page_skip_page_component__WEBPACK_IMPORTED_MODULE_18__ = __webpack_require__(/*! ./main/skip-page/skip-page.component */ "./src/app/main/skip-page/skip-page.component.ts");
+/* harmony import */ var _main_toast_page_toast_page_component__WEBPACK_IMPORTED_MODULE_19__ = __webpack_require__(/*! ./main/toast-page/toast-page.component */ "./src/app/main/toast-page/toast-page.component.ts");
+/* harmony import */ var _main_list_page_list_page_component__WEBPACK_IMPORTED_MODULE_20__ = __webpack_require__(/*! ./main/list-page/list-page.component */ "./src/app/main/list-page/list-page.component.ts");
+/* harmony import */ var _main_bottom_page_bottom_page_component__WEBPACK_IMPORTED_MODULE_21__ = __webpack_require__(/*! ./main/bottom-page/bottom-page.component */ "./src/app/main/bottom-page/bottom-page.component.ts");
+/* harmony import */ var _main_breadcrumbs_page_breadcrumbs_page_component__WEBPACK_IMPORTED_MODULE_22__ = __webpack_require__(/*! ./main/breadcrumbs-page/breadcrumbs-page.component */ "./src/app/main/breadcrumbs-page/breadcrumbs-page.component.ts");
 
 
 
@@ -4907,77 +4562,72 @@ var appRoutes = [
         data: { breadcrumb: 'carousel' }
     },
     {
-        path: 'table',
-        component: _main_table_page_table_page_component__WEBPACK_IMPORTED_MODULE_6__["TablePageComponent"],
-        data: { breadcrumb: 'table' }
-    },
-    {
         path: 'pagination',
-        component: _main_pagination_page_pagination_page_component__WEBPACK_IMPORTED_MODULE_7__["PaginationPageComponent"],
+        component: _main_pagination_page_pagination_page_component__WEBPACK_IMPORTED_MODULE_6__["PaginationPageComponent"],
         data: { breadcrumb: 'pagination' }
     },
     {
         path: 'slider',
-        component: _main_slider_page_slider_page_component__WEBPACK_IMPORTED_MODULE_8__["SliderPageComponent"],
+        component: _main_slider_page_slider_page_component__WEBPACK_IMPORTED_MODULE_7__["SliderPageComponent"],
         data: { breadcrumb: 'slider' }
     },
     {
         path: 'gettingStarted',
-        component: _main_getting_started_getting_started_component__WEBPACK_IMPORTED_MODULE_9__["GettingStartedComponent"],
+        component: _main_getting_started_getting_started_component__WEBPACK_IMPORTED_MODULE_8__["GettingStartedComponent"],
         data: { breadcrumb: 'GettingStarted' }
     },
-    { path: 'faq', component: _main_faq_faq_component__WEBPACK_IMPORTED_MODULE_10__["FaqComponent"], data: { breadcrumb: 'F.A.Q' } },
-    { path: 'step', component: _main_step_page_step_page_component__WEBPACK_IMPORTED_MODULE_11__["StepPageComponent"], data: { breadcrumb: 'Step' } },
+    { path: 'faq', component: _main_faq_faq_component__WEBPACK_IMPORTED_MODULE_9__["FaqComponent"], data: { breadcrumb: 'F.A.Q' } },
+    { path: 'step', component: _main_step_page_step_page_component__WEBPACK_IMPORTED_MODULE_10__["StepPageComponent"], data: { breadcrumb: 'Step' } },
     {
         path: 'calendar',
-        component: _main_calendar_page_calendar_page_component__WEBPACK_IMPORTED_MODULE_12__["CalendarPageComponent"],
+        component: _main_calendar_page_calendar_page_component__WEBPACK_IMPORTED_MODULE_11__["CalendarPageComponent"],
         data: { breadcrumb: 'Calendar' }
     },
     {
         path: 'dropdown',
-        component: _main_dropdown_page_dropdown_page_component__WEBPACK_IMPORTED_MODULE_13__["DropdownPageComponent"],
+        component: _main_dropdown_page_dropdown_page_component__WEBPACK_IMPORTED_MODULE_12__["DropdownPageComponent"],
         data: { breadcrumb: 'Dropdown' }
     },
     {
         path: 'input',
-        component: _main_input_page_input_page_component__WEBPACK_IMPORTED_MODULE_14__["InputPageComponent"],
+        component: _main_input_page_input_page_component__WEBPACK_IMPORTED_MODULE_13__["InputPageComponent"],
         data: { breadcrumb: 'Input' }
     },
     {
         path: 'checkbox',
-        component: _main_checkbox_page_checkbox_page_component__WEBPACK_IMPORTED_MODULE_15__["CheckboxPageComponent"],
+        component: _main_checkbox_page_checkbox_page_component__WEBPACK_IMPORTED_MODULE_14__["CheckboxPageComponent"],
         data: { breadcrumb: 'Checkbox' }
     },
     {
         path: 'radio',
-        component: _main_radio_page_radio_page_component__WEBPACK_IMPORTED_MODULE_16__["RadioPageComponent"],
+        component: _main_radio_page_radio_page_component__WEBPACK_IMPORTED_MODULE_15__["RadioPageComponent"],
         data: { breadcrumb: 'Radios' }
     },
     {
         path: 'select',
-        component: _main_select_page_select_page_component__WEBPACK_IMPORTED_MODULE_17__["SelectPageComponent"],
+        component: _main_select_page_select_page_component__WEBPACK_IMPORTED_MODULE_16__["SelectPageComponent"],
         data: { breadcrumb: 'select' }
     },
     {
         path: 'fieldset',
-        component: _main_fieldset_page_fieldset_page_component__WEBPACK_IMPORTED_MODULE_18__["FieldsetPageComponent"],
+        component: _main_fieldset_page_fieldset_page_component__WEBPACK_IMPORTED_MODULE_17__["FieldsetPageComponent"],
         data: { breadcrumb: 'fieldset' }
     },
-    { path: 'skip', component: _main_skip_page_skip_page_component__WEBPACK_IMPORTED_MODULE_19__["SkipPageComponent"], data: { breadcrumb: 'skip' } },
+    { path: 'skip', component: _main_skip_page_skip_page_component__WEBPACK_IMPORTED_MODULE_18__["SkipPageComponent"], data: { breadcrumb: 'skip' } },
     {
         path: 'toast',
-        component: _main_toast_page_toast_page_component__WEBPACK_IMPORTED_MODULE_20__["ToastPageComponent"],
+        component: _main_toast_page_toast_page_component__WEBPACK_IMPORTED_MODULE_19__["ToastPageComponent"],
         data: { breadcrumb: 'toast' }
     },
-    { path: 'list', component: _main_list_page_list_page_component__WEBPACK_IMPORTED_MODULE_21__["ListPageComponent"], data: { breadcrumb: 'list' } },
+    { path: 'list', component: _main_list_page_list_page_component__WEBPACK_IMPORTED_MODULE_20__["ListPageComponent"], data: { breadcrumb: 'list' } },
     {
         path: 'bottom',
-        component: _main_bottom_page_bottom_page_component__WEBPACK_IMPORTED_MODULE_22__["BottomPageComponent"],
+        component: _main_bottom_page_bottom_page_component__WEBPACK_IMPORTED_MODULE_21__["BottomPageComponent"],
         data: { breadcrumb: 'Bottom' }
     },
     {
         path: 'breadcrumbs',
-        component: _main_breadcrumbs_page_breadcrumbs_page_component__WEBPACK_IMPORTED_MODULE_23__["BreadcrumbsPageComponent"],
+        component: _main_breadcrumbs_page_breadcrumbs_page_component__WEBPACK_IMPORTED_MODULE_22__["BreadcrumbsPageComponent"],
         data: { breadcrumb: 'Breadcrumbs' }
     },
     { path: '', redirectTo: '/home', pathMatch: 'full' }
@@ -5060,7 +4710,7 @@ module.exports = "/* HEADER */\n\nheader {\n  background-color: var(--n-dark);\n
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<!-- Header -->\n<header>\n  <!-- Burger Button -->\n  <button [ngClass]=\"{ burgerVertical: menuMobile, burgerHorizontal: !menuMobile }\" (click)=\"ToggleMenuBurger()\">\n    <img src=\"assets/img/burger.svg\" alt=\"Mobile Button (Open Menu)\" />\n  </button>\n\n  <!-- Logo -->\n  <h1>\n    <a routerLink=\"/home\" class=\"logo\" routerLinkActive=\"active\">\n      <picture>\n        <source srcset=\"assets/img/creamNG-logo.svg\" media=\"(min-width: {{ mediumRes }})\" />\n        <img src=\"assets/img/creamNG-logo-sml.svg\" alt=\"Cream-NG, your accessible Angular Lib\" />\n      </picture>\n    </a>\n  </h1>\n\n  <!-- MENU -->\n  <app-menu [ngClass]=\"{ mobileOpen: menuMobile, mobileClose: !menuMobile }\">\n    <!-- GROUP FORM ELEMENTS -->\n    <app-menu-item nameButton=\"Form Elements\" idSvg=\"assets/img/icons.svg#svg1\" [index]=\"1\" [isOpen]=\"false\">\n      <ul class=\"contenuMenu\">\n        <li (click)=\"ToggleMenuBurger()\">\n          <a routerLink=\"/button\" routerLinkActive=\"active\">Buttons &amp; Controls</a>\n        </li>\n        <li (click)=\"ToggleMenuBurger()\">\n          <a routerLink=\"/checkbox\" routerLinkActive=\"active\">Checkboxes</a>\n        </li>\n        <li (click)=\"ToggleMenuBurger()\">\n          <a routerLink=\"/calendar\" routerLinkActive=\"active\">Datepicker</a>\n        </li>\n        <li (click)=\"ToggleMenuBurger()\">\n          <a routerLink=\"/fieldset\" routerLinkActive=\"active\">Fieldset</a>\n        </li>\n        <li (click)=\"ToggleMenuBurger()\">\n          <a routerLink=\"/input\" routerLinkActive=\"active\">Inputs</a>\n        </li>\n        <li (click)=\"ToggleMenuBurger()\">\n          <a routerLink=\"/radio\" routerLinkActive=\"active\">Radios</a>\n        </li>\n        <li (click)=\"ToggleMenuBurger()\">\n          <a routerLink=\"/select\" routerLinkActive=\"active\">Selects &amp; Datalists</a>\n        </li>\n        <li (click)=\"ToggleMenuBurger()\">\n          <a routerLink=\"/slider\" routerLinkActive=\"active\">Sliders &amp; Progress</a>\n        </li>\n      </ul>\n    </app-menu-item>\n\n    <!-- NAVIGATION -->\n    <app-menu-item nameButton=\"Navigation\" idSvg=\"assets/img/icons.svg#svg2\" [index]=\"2\" [isOpen]=\"false\">\n      <ul class=\"contenuMenu\">\n        <li (click)=\"ToggleMenuBurger()\">\n          <a routerLink=\"/breadcrumbs\" routerLinkActive=\"active\">Breadcrumbs</a>\n        </li>\n        <li (click)=\"ToggleMenuBurger()\">\n          <a routerLink=\"/skip\" routerLinkActive=\"active\">Skip Link</a>\n        </li>\n      </ul>\n    </app-menu-item>\n\n    <!-- GROUP BLOCKS -->\n    <app-menu-item nameButton=\"Blocks\" idSvg=\"assets/img/icons.svg#svg3\" [index]=\"3\" [isOpen]=\"false\">\n      <ul class=\"contenuMenu\">\n        <li (click)=\"ToggleMenuBurger()\">\n          <a routerLink=\"/accordion\" routerLinkActive=\"active\">Accordion</a>\n        </li>\n        <li (click)=\"ToggleMenuBurger()\">\n          <a routerLink=\"/carousel\" routerLinkActive=\"active\">Carousel</a>\n        </li>\n        <li (click)=\"ToggleMenuBurger()\">\n          <a routerLink=\"/table\" routerLinkActive=\"active\">Data Table</a>\n        </li>\n        <li (click)=\"ToggleMenuBurger()\">\n          <a routerLink=\"/list\" routerLinkActive=\"active\">List</a>\n        </li>\n        <li (click)=\"ToggleMenuBurger()\">\n          <a routerLink=\"/tabs\" routerLinkActive=\"active\">Tabs</a>\n        </li>\n      </ul>\n    </app-menu-item>\n\n    <!-- STRUCTURE -->\n    <app-menu-item nameButton=\"Page Structure\" idSvg=\"assets/img/icons.svg#svg5\" [index]=\"4\" [isOpen]=\"false\">\n      <ul class=\"contenuMenu\">\n        <li (click)=\"ToggleMenuBurger()\">\n          <a routerLink=\"/bottom\" routerLinkActive=\"active\">Bottom</a>\n        </li>\n      </ul>\n    </app-menu-item>\n\n    <!-- EDITORIAL -->\n    <app-menu-item nameButton=\"Editorial\" idSvg=\"assets/img/icons.svg#svg5\" [index]=\"5\" [isOpen]=\"false\">\n      <ul class=\"contenuMenu\">\n        <li></li>\n      </ul>\n    </app-menu-item>\n\n    <!-- GENERAL ELEMENTS -->\n    <app-menu-item nameButton=\"Utilities\" idSvg=\"assets/img/icons.svg#svg5\" [index]=\"6\" [isOpen]=\"false\">\n      <ul class=\"contenuMenu\">\n        <li (click)=\"ToggleMenuBurger()\">\n          <a routerLink=\"/dropdown\" routerLinkActive=\"active\">Dropdown</a>\n        </li>\n        <li (click)=\"ToggleMenuBurger()\">\n          <a routerLink=\"/modal\" routerLinkActive=\"active\">Modal</a>\n        </li>\n        <li (click)=\"ToggleMenuBurger()\">\n          <a routerLink=\"/pagination\" routerLinkActive=\"active\">Pagination</a>\n        </li>\n        <li (click)=\"ToggleMenuBurger()\">\n          <a routerLink=\"/step\" routerLinkActive=\"active\">Steps</a>\n        </li>\n        <li (click)=\"ToggleMenuBurger()\">\n          <a routerLink=\"/toast\" routerLinkActive=\"active\">Toast</a>\n        </li>\n      </ul>\n    </app-menu-item>\n    <!-- GROUP HELP -->\n    <app-menu-item nameButton=\"Help\" class=\"help\" idSvg=\"assets/img/icons.svg#svg4\" [index]=\"0\" [isOpen]=\"false\">\n      <ul class=\"contenuMenu\">\n        <li (click)=\"ToggleMenuBurger()\">\n          <a routerLink=\"/gettingStarted\" routerLinkActive=\"active\">Getting Started</a>\n        </li>\n        <li (click)=\"ToggleMenuBurger()\">\n          <a routerLink=\"/faq\" routerLinkActive=\"active\">F.A.Q</a>\n        </li>\n      </ul>\n    </app-menu-item>\n  </app-menu>\n</header>"
+module.exports = "<!-- Header -->\n<header>\n  <!-- Burger Button -->\n  <button [ngClass]=\"{ burgerVertical: menuMobile, burgerHorizontal: !menuMobile }\" (click)=\"ToggleMenuBurger()\">\n    <img src=\"assets/img/burger.svg\" alt=\"Mobile Button (Open Menu)\" />\n  </button>\n\n  <!-- Logo -->\n  <h1>\n    <a routerLink=\"/home\" class=\"logo\" routerLinkActive=\"active\">\n      <picture>\n        <source srcset=\"assets/img/creamNG-logo.svg\" media=\"(min-width: {{ mediumRes }})\" />\n        <img src=\"assets/img/creamNG-logo-sml.svg\" alt=\"Cream-NG, your accessible Angular Lib\" />\n      </picture>\n    </a>\n  </h1>\n\n  <!-- MENU -->\n  <app-menu [ngClass]=\"{ mobileOpen: menuMobile, mobileClose: !menuMobile }\">\n    <!-- GROUP FORM ELEMENTS -->\n    <app-menu-item nameButton=\"Form Elements\" idSvg=\"assets/img/icons.svg#svg1\" [index]=\"1\" [isOpen]=\"false\">\n      <ul class=\"contenuMenu\">\n        <li (click)=\"ToggleMenuBurger()\">\n          <a routerLink=\"/button\" routerLinkActive=\"active\">Buttons &amp; Controls</a>\n        </li>\n        <li (click)=\"ToggleMenuBurger()\">\n          <a routerLink=\"/checkbox\" routerLinkActive=\"active\">Checkboxes</a>\n        </li>\n        <li (click)=\"ToggleMenuBurger()\">\n          <a routerLink=\"/calendar\" routerLinkActive=\"active\">Datepicker</a>\n        </li>\n        <li (click)=\"ToggleMenuBurger()\">\n          <a routerLink=\"/fieldset\" routerLinkActive=\"active\">Fieldset</a>\n        </li>\n        <li (click)=\"ToggleMenuBurger()\">\n          <a routerLink=\"/input\" routerLinkActive=\"active\">Inputs</a>\n        </li>\n        <li (click)=\"ToggleMenuBurger()\">\n          <a routerLink=\"/radio\" routerLinkActive=\"active\">Radios</a>\n        </li>\n        <li (click)=\"ToggleMenuBurger()\">\n          <a routerLink=\"/select\" routerLinkActive=\"active\">Selects &amp; Datalists</a>\n        </li>\n        <li (click)=\"ToggleMenuBurger()\">\n          <a routerLink=\"/slider\" routerLinkActive=\"active\">Sliders &amp; Progress</a>\n        </li>\n      </ul>\n    </app-menu-item>\n\n    <!-- NAVIGATION -->\n    <app-menu-item nameButton=\"Navigation\" idSvg=\"assets/img/icons.svg#svg2\" [index]=\"2\" [isOpen]=\"false\">\n      <ul class=\"contenuMenu\">\n        <li (click)=\"ToggleMenuBurger()\">\n          <a routerLink=\"/breadcrumbs\" routerLinkActive=\"active\">Breadcrumbs</a>\n        </li>\n        <li (click)=\"ToggleMenuBurger()\">\n          <a routerLink=\"/skip\" routerLinkActive=\"active\">Skip Link</a>\n        </li>\n      </ul>\n    </app-menu-item>\n\n    <!-- GROUP BLOCKS -->\n    <app-menu-item nameButton=\"Blocks\" idSvg=\"assets/img/icons.svg#svg3\" [index]=\"3\" [isOpen]=\"false\">\n      <ul class=\"contenuMenu\">\n        <li (click)=\"ToggleMenuBurger()\">\n          <a routerLink=\"/accordion\" routerLinkActive=\"active\">Accordion</a>\n        </li>\n        <li (click)=\"ToggleMenuBurger()\">\n          <a routerLink=\"/carousel\" routerLinkActive=\"active\">Carousel</a>\n        </li>\n        <li (click)=\"ToggleMenuBurger()\">\n          <a routerLink=\"/list\" routerLinkActive=\"active\">List</a>\n        </li>\n        <li (click)=\"ToggleMenuBurger()\">\n          <a routerLink=\"/tabs\" routerLinkActive=\"active\">Tabs</a>\n        </li>\n      </ul>\n    </app-menu-item>\n\n    <!-- STRUCTURE -->\n    <app-menu-item nameButton=\"Page Structure\" idSvg=\"assets/img/icons.svg#svg5\" [index]=\"4\" [isOpen]=\"false\">\n      <ul class=\"contenuMenu\">\n        <li (click)=\"ToggleMenuBurger()\">\n          <a routerLink=\"/bottom\" routerLinkActive=\"active\">Bottom</a>\n        </li>\n      </ul>\n    </app-menu-item>\n\n    <!-- EDITORIAL -->\n    <app-menu-item nameButton=\"Editorial\" idSvg=\"assets/img/icons.svg#svg5\" [index]=\"5\" [isOpen]=\"false\">\n      <ul class=\"contenuMenu\">\n        <li></li>\n      </ul>\n    </app-menu-item>\n\n    <!-- GENERAL ELEMENTS -->\n    <app-menu-item nameButton=\"Utilities\" idSvg=\"assets/img/icons.svg#svg5\" [index]=\"6\" [isOpen]=\"false\">\n      <ul class=\"contenuMenu\">\n        <li (click)=\"ToggleMenuBurger()\">\n          <a routerLink=\"/dropdown\" routerLinkActive=\"active\">Dropdown</a>\n        </li>\n        <li (click)=\"ToggleMenuBurger()\">\n          <a routerLink=\"/modal\" routerLinkActive=\"active\">Modal</a>\n        </li>\n        <li (click)=\"ToggleMenuBurger()\">\n          <a routerLink=\"/pagination\" routerLinkActive=\"active\">Pagination</a>\n        </li>\n        <li (click)=\"ToggleMenuBurger()\">\n          <a routerLink=\"/step\" routerLinkActive=\"active\">Steps</a>\n        </li>\n        <li (click)=\"ToggleMenuBurger()\">\n          <a routerLink=\"/toast\" routerLinkActive=\"active\">Toast</a>\n        </li>\n      </ul>\n    </app-menu-item>\n    <!-- GROUP HELP -->\n    <app-menu-item nameButton=\"Help\" class=\"help\" idSvg=\"assets/img/icons.svg#svg4\" [index]=\"0\" [isOpen]=\"false\">\n      <ul class=\"contenuMenu\">\n        <li (click)=\"ToggleMenuBurger()\">\n          <a routerLink=\"/gettingStarted\" routerLinkActive=\"active\">Getting Started</a>\n        </li>\n        <li (click)=\"ToggleMenuBurger()\">\n          <a routerLink=\"/faq\" routerLinkActive=\"active\">F.A.Q</a>\n        </li>\n      </ul>\n    </app-menu-item>\n  </app-menu>\n</header>\n"
 
 /***/ }),
 
@@ -6108,7 +5758,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<!-- TITLE CAROUSEL COMPONENT PAGE -->\n<div class=\"panelTitle\">\n  <h2><strong>Carousel</strong> Component</h2>\n  <a routerLink=\"/radio\" routerLinkActive=\"active\">Toaster</a>\n  <ul>\n    <li><a scrollTo href=\"carousel\">Carousel</a></li>\n    <!--<li><a href=\"#\">Automatic Carousel</a></li>\n    <li><a href=\"#\">Images Carousel</a></li>-->\n  </ul>\n</div>\n\n<!-- DESCRIPTION ACCORDION COMPONENT PAGE -->\n<div class=\"titleComponent\">\n  <div class=\"descriptionComponent\" id=\"carousel\">\n    <h3>Simple Carousel</h3>\n\n    <div class=\"demo\">\n      <!-- CAROUSEL DEMO -->\n      <c3m-carousel>\n        <c3m-carousel-item [index]=\"0\">\n          <p>Slide 1</p>\n        </c3m-carousel-item>\n\n        <c3m-carousel-item [index]=\"1\">\n          <p>Slide 2</p>\n        </c3m-carousel-item>\n\n        <c3m-carousel-item [index]=\"2\">\n          <p>Slide 3</p>\n        </c3m-carousel-item>\n      </c3m-carousel>\n\n      <c3m-carousel>\n        <c3m-carousel-item [index]=\"0\">\n          <p>Slide 1</p>\n        </c3m-carousel-item>\n\n        <c3m-carousel-item [index]=\"1\">\n          <p>Slide 2</p>\n        </c3m-carousel-item>\n\n        <c3m-carousel-item [index]=\"2\">\n          <p>Slide 3</p>\n        </c3m-carousel-item>\n      </c3m-carousel>\n    </div>\n\n    <div class=\"explain\">\n      <dl>\n        <div>\n          <dt>index</dt>\n          <dd>Order of the slides</dd>\n        </div>\n        <div>\n          <dt>p tag</dt>\n          <dd>Write what you want, it's a ng-content tag</dd>\n        </div>\n      </dl>\n    </div>\n\n    <!-- TABS SNIPPETS -->\n    <c3m-tabs class=\"snippets\">\n      <c3m-tab tabTitle=\"To call the component\">\n        <div class=\"code\">\n          <!--?prettify lang=html linenums=true?-->\n          <pre class=\"prettyprint linenums\">\n              <code>\n  &#x3C;c3m-carousel&#x3E;\n\n    &#x3C;c3m-carousel-item [index]=&#x22;0&#x22;&#x3E;\n        &#x3C;p&#x3E;Slide 1&#x3C;/p&#x3E;\n    &#x3C;/c3m-carousel-item&#x3E;\n\n    &#x3C;c3m-carousel-item [index]=&#x22;1&#x22;&#x3E;\n        &#x3C;p&#x3E;Slide 2&#x3C;/p&#x3E;\n    &#x3C;/c3m-carousel-item&#x3E;\n\n    &#x3C;c3m-carousel-item [index]=&#x22;2&#x22;&#x3E;\n        &#x3C;p&#x3E;Slide 3&#x3C;/p&#x3E;\n    &#x3C;/c3m-carousel-item&#x3E;\n\n  &#x3C;/c3m-carousel&#x3E;</code>\n            </pre>\n        </div>\n      </c3m-tab>\n    </c3m-tabs>\n  </div>\n</div>\n"
+module.exports = "<!-- TITLE CAROUSEL COMPONENT PAGE -->\n<div class=\"panelTitle\">\n  <h2><strong>Carousel</strong> Component</h2>\n  <ul>\n    <li><a scrollTo href=\"carousel\">Carousel</a></li>\n  </ul>\n</div>\n\n<!-- DESCRIPTION ACCORDION COMPONENT PAGE -->\n<div class=\"titleComponent\">\n  <div class=\"descriptionComponent\" id=\"carousel\">\n    <h3>Simple Carousel</h3>\n\n    <div class=\"demo\">\n      <!-- CAROUSEL DEMO -->\n      <c3m-carousel>\n        <c3m-carousel-item [index]=\"0\">\n          <p>Slide 1</p>\n        </c3m-carousel-item>\n\n        <c3m-carousel-item [index]=\"1\">\n          <p>Slide 2</p>\n        </c3m-carousel-item>\n\n        <c3m-carousel-item [index]=\"2\">\n          <p>Slide 3</p>\n        </c3m-carousel-item>\n      </c3m-carousel>\n    </div>\n\n    <div class=\"explain\">\n      <dl>\n        <div>\n          <dt>index</dt>\n          <dd>Order of the slides</dd>\n        </div>\n        <div>\n          <dt>p tag</dt>\n          <dd>Write what you want, it's a ng-content tag</dd>\n        </div>\n      </dl>\n    </div>\n\n    <!-- TABS SNIPPETS -->\n    <c3m-tabs class=\"snippets\">\n      <c3m-tab tabTitle=\"To call the component\">\n        <div class=\"code\">\n          <!--?prettify lang=html linenums=true?-->\n          <pre class=\"prettyprint linenums\">\n              <code>\n  &#x3C;c3m-carousel&#x3E;\n\n    &#x3C;c3m-carousel-item [index]=&#x22;0&#x22;&#x3E;\n        &#x3C;p&#x3E;Slide 1&#x3C;/p&#x3E;\n    &#x3C;/c3m-carousel-item&#x3E;\n\n    &#x3C;c3m-carousel-item [index]=&#x22;1&#x22;&#x3E;\n        &#x3C;p&#x3E;Slide 2&#x3C;/p&#x3E;\n    &#x3C;/c3m-carousel-item&#x3E;\n\n    &#x3C;c3m-carousel-item [index]=&#x22;2&#x22;&#x3E;\n        &#x3C;p&#x3E;Slide 3&#x3C;/p&#x3E;\n    &#x3C;/c3m-carousel-item&#x3E;\n\n  &#x3C;/c3m-carousel&#x3E;</code>\n            </pre>\n        </div>\n      </c3m-tab>\n    </c3m-tabs>\n  </div>\n</div>\n"
 
 /***/ }),
 
@@ -6510,7 +6160,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<div class=\"panelTitle\">\n  <h2>\n    <strong>List</strong> Component</h2>\n  <ul>\n    <li>\n      <a scrollTo href=\"#list\">Regular List</a>\n    </li>\n    <li>\n      <a scrollTo href=\"#list-order\">Ordered List</a>\n    </li>\n    <li>\n      <a scrollTo href=\"#list-thumbnails\">List with thumbnails</a>\n    </li>\n    <li>\n        <a scrollTo href=\"#list-description\">Description list</a>\n      </li>\n  </ul>\n</div>\n\n\n<div class=\"titleComponent\">\n  <div class=\"descriptionComponent\" id=\"list\">\n    <h3>Regular List</h3>\n\n    <div class=\"demo\">\n      <!-- SIMPLE LIST -->\n      <c3m-list>\n      </c3m-list>\n    </div>\n\n    <div class=\"explain\">\n      <dl>\n        <dt>dataList</dt>\n        <dd>The data in the list comes from a JSON file</dd>\n      </dl>\n    </div>\n\n    <!-- TABS SNIPPETS -->\n    <c3m-tabs class=\"snippets\">\n      <c3m-tab tabTitle=\"To call the component\">\n        <div class=\"code\">\n          <!--?prettify lang=html linenums=true?-->\n          <pre class=\"prettyprint linenums\">\n  &lt;!-- SIMPLE LIST --&gt;\n  &lt;c3m-list&gt;\n  &lt;/c3m-list&gt;\n            </pre>\n        </div>\n      </c3m-tab>\n\n      <c3m-tab tabTitle=\"JSON\">\n          <p class=\"pre-code\"> dataList.json</p>\n          <div class=\"code\">\n            <!--?prettify lang=js linenums=true?-->\n              <pre class=\"prettyprint linenums\">\n[\n  &#123;\n      &#34;value&#34;: &#34;List Item 1&#34;,\n  &#125;,\n  &#123;\n      &#34;value&#34;: &#34;List Item 2&#34;,\n  &#125;,\n  &#123;\n      &#34;value&#34;: &#34;List Item 3&#34;,\n  &#125;,\n  &#123;\n      &#34;value&#34;: &#34;List Item 4&#34;,\n  &#125;\n]\n              </pre>\n          </div>\n      </c3m-tab>\n\n    </c3m-tabs>\n  </div>\n</div>\n\n\n<div class=\"titleComponent\">\n    <div class=\"descriptionComponent\" id=\"list-order\">\n      <h3>Ordered List</h3>\n\n      <div class=\"demo\">\n        <!-- SIMPLE LIST -->\n        <c3m-list-order>\n        </c3m-list-order>\n      </div>\n\n      <div class=\"explain\">\n        <dl>\n          <dt>dataList</dt>\n          <dd>The data in the list comes from a JSON file</dd>\n        </dl>\n      </div>\n\n      <!-- TABS SNIPPETS -->\n      <c3m-tabs class=\"snippets\">\n        <c3m-tab tabTitle=\"To call the component\">\n          <div class=\"code\">\n            <!--?prettify lang=html linenums=true?-->\n            <pre class=\"prettyprint linenums\">\n    &lt;!-- SIMPLE LIST --&gt;\n    &lt;c3m-list-order&gt;\n    &lt;/c3m-list-order&gt;\n              </pre>\n          </div>\n        </c3m-tab>\n\n        <c3m-tab tabTitle=\"JSON\">\n            <p class=\"pre-code\"> dataList.json</p>\n            <div class=\"code\">\n              <!--?prettify lang=js linenums=true?-->\n                <pre class=\"prettyprint linenums\">\n[\n    &#123;\n        &#34;value&#34;: &#34;List Item 1&#34;,\n    &#125;,\n    &#123;\n        &#34;value&#34;: &#34;List Item 2&#34;,\n    &#125;,\n    &#123;\n        &#34;value&#34;: &#34;List Item 3&#34;,\n    &#125;,\n    &#123;\n        &#34;value&#34;: &#34;List Item 4&#34;,\n    &#125;\n]\n                </pre>\n            </div>\n        </c3m-tab>\n      </c3m-tabs>\n    </div>\n  </div>\n\n\n\n  <div class=\"titleComponent\">\n      <div class=\"descriptionComponent\" id=\"list-thumbnails\">\n        <h3>List with thumbnails</h3>\n\n        <div class=\"demo\">\n          <!-- SIMPLE LIST -->\n          <c3m-list-thumbnails>\n          </c3m-list-thumbnails>\n        </div>\n\n        <div class=\"explain\">\n          <dl>\n            <div>\n              <dt>dataList</dt>\n              <dd>The data in the list comes from a JSON file</dd>\n            </div>\n            <div>\n              <dt>placeholder.com</dt>\n              <dd>Fake image with a specific size</dd>\n              </div>\n            </dl>\n        </div>\n\n        <!-- TABS SNIPPETS -->\n        <c3m-tabs class=\"snippets\">\n          <c3m-tab tabTitle=\"To call the component\">\n            <div class=\"code\">\n              <!--?prettify lang=html linenums=true?-->\n              <pre class=\"prettyprint linenums\">\n      &lt;!-- SIMPLE LIST --&gt;\n      &lt;c3m-list-thumbnails&gt;\n      &lt;/c3m-list-thumbnails&gt;\n                </pre>\n            </div>\n          </c3m-tab>\n\n          <c3m-tab tabTitle=\"JSON\">\n              <p class=\"pre-code\"> dataList.json</p>\n              <div class=\"code\">\n                <!--?prettify lang=js linenums=true?-->\n                  <pre class=\"prettyprint linenums\">\n  [\n      &#123;\n          &#34;value&#34;: &#34;List Item 1&#34;,\n          &#34;url&#34;: &#34;http://via.placeholder.com/150x150&#34;,\n      &#125;,\n      &#123;\n          &#34;value&#34;: &#34;List Item 2&#34;,\n          &#34;url&#34;: &#34;http://via.placeholder.com/150x150&#34;,\n      &#125;,\n      &#123;\n          &#34;value&#34;: &#34;List Item 3&#34;,\n          &#34;url&#34;: &#34;http://via.placeholder.com/150x150&#34;,\n      &#125;,\n      &#123;\n          &#34;value&#34;: &#34;List Item 4&#34;,\n          &#34;url&#34;: &#34;http://via.placeholder.com/150x150&#34;,\n      &#125;\n  ]\n                  </pre>\n              </div>\n          </c3m-tab>\n        </c3m-tabs>\n      </div>\n    </div>\n\n\n  <div class=\"titleComponent\">\n      <div class=\"descriptionComponent\" id=\"list-description\">\n        <h3>Description List</h3>\n\n        <div class=\"demo\">\n          <!-- SIMPLE LIST -->\n          <c3m-list-description>\n          </c3m-list-description>\n        </div>\n\n        <div class=\"explain\">\n          <dl>\n            <dt>dataList</dt>\n            <dd>The data in the list comes from a JSON file</dd>\n          </dl>\n        </div>\n\n        <!-- TABS SNIPPETS -->\n        <c3m-tabs class=\"snippets\">\n          <c3m-tab tabTitle=\"To call the component\">\n            <div class=\"code\">\n              <!--?prettify lang=html linenums=true?-->\n              <pre class=\"prettyprint linenums\">\n      &lt;!-- SIMPLE LIST --&gt;\n      &lt;c3m-list-description&gt;\n      &lt;/c3m-list-description&gt;\n                </pre>\n            </div>\n          </c3m-tab>\n\n          <c3m-tab tabTitle=\"JSON\">\n              <p class=\"pre-code\"> dataList.json</p>\n              <div class=\"code\">\n                <!--?prettify lang=js linenums=true?-->\n                  <pre class=\"prettyprint linenums\">\n  [\n      &#123;\n          &#34;title&#34;: &#34;List Title 1&#34;,\n          &#34;content&#34;: &#34;List Content 1&#34;\n      &#125;,\n      &#123;\n          &#34;title&#34;: &#34;List Title 2&#34;,\n          &#34;content&#34;: &#34;List Content 2&#34;\n      &#125;,\n      &#123;\n          &#34;title&#34;: &#34;List Title 3&#34;,\n          &#34;content&#34;: &#34;List Content 3&#34;\n      &#125;,\n      &#123;\n          &#34;title&#34;: &#34;List Title 4&#34;,\n          &#34;content&#34;: &#34;List Content 4&#34;\n      &#125;\n  ]\n                  </pre>\n              </div>\n          </c3m-tab>\n\n        </c3m-tabs>\n      </div>\n    </div>\n"
+module.exports = "<div class=\"panelTitle\">\n  <h2><strong>List</strong> Component</h2>\n  <ul>\n    <li>\n      <a scrollTo href=\"#list\">Regular List</a>\n    </li>\n    <li>\n      <a scrollTo href=\"#list-order\">Ordered List</a>\n    </li>\n    <li>\n      <a scrollTo href=\"#list-thumbnails\">List with thumbnails</a>\n    </li>\n    <li>\n      <a scrollTo href=\"#list-description\">Description list</a>\n    </li>\n  </ul>\n</div>\n\n<div class=\"titleComponent\">\n  <div class=\"descriptionComponent\" id=\"list\">\n    <h3>Regular List</h3>\n\n    <div class=\"demo\">\n      <!-- SIMPLE LIST -->\n      <c3m-list [values]=\"listItem\"> </c3m-list>\n    </div>\n\n    <div class=\"explain\">\n      <dl>\n        <dt>dataList</dt>\n        <dd>The data in the list comes from a JSON file</dd>\n      </dl>\n    </div>\n\n    <!-- TABS SNIPPETS -->\n    <c3m-tabs class=\"snippets\">\n      <c3m-tab tabTitle=\"To call the component\">\n        <div class=\"code\">\n          <!--?prettify lang=html linenums=true?-->\n          <pre class=\"prettyprint linenums\">\n  &lt;!-- SIMPLE LIST --&gt;\n  &lt;c3m-list&gt;\n  &lt;/c3m-list&gt;\n            </pre\n          >\n        </div>\n      </c3m-tab>\n\n      <c3m-tab tabTitle=\"JSON\">\n        <p class=\"pre-code\">dataList.json</p>\n        <div class=\"code\">\n          <!--?prettify lang=js linenums=true?-->\n          <pre class=\"prettyprint linenums\">\n[\n  &#123;\n      &#34;value&#34;: &#34;List Item 1&#34;,\n  &#125;,\n  &#123;\n      &#34;value&#34;: &#34;List Item 2&#34;,\n  &#125;,\n  &#123;\n      &#34;value&#34;: &#34;List Item 3&#34;,\n  &#125;,\n  &#123;\n      &#34;value&#34;: &#34;List Item 4&#34;,\n  &#125;\n]\n              </pre\n          >\n        </div>\n      </c3m-tab>\n    </c3m-tabs>\n  </div>\n</div>\n\n<div class=\"titleComponent\">\n  <div class=\"descriptionComponent\" id=\"list-order\">\n    <h3>Ordered List</h3>\n\n    <div class=\"demo\">\n      <!-- SIMPLE LIST -->\n      <c3m-list-order [values]=\"listItem\"> </c3m-list-order>\n    </div>\n\n    <div class=\"explain\">\n      <dl>\n        <dt>dataList</dt>\n        <dd>The data in the list comes from a JSON file</dd>\n      </dl>\n    </div>\n\n    <!-- TABS SNIPPETS -->\n    <c3m-tabs class=\"snippets\">\n      <c3m-tab tabTitle=\"To call the component\">\n        <div class=\"code\">\n          <!--?prettify lang=html linenums=true?-->\n          <pre class=\"prettyprint linenums\">\n    &lt;!-- SIMPLE LIST --&gt;\n    &lt;c3m-list-order&gt;\n    &lt;/c3m-list-order&gt;\n              </pre\n          >\n        </div>\n      </c3m-tab>\n\n      <c3m-tab tabTitle=\"JSON\">\n        <p class=\"pre-code\">dataList.json</p>\n        <div class=\"code\">\n          <!--?prettify lang=js linenums=true?-->\n          <pre class=\"prettyprint linenums\">\n[\n    &#123;\n        &#34;value&#34;: &#34;List Item 1&#34;,\n    &#125;,\n    &#123;\n        &#34;value&#34;: &#34;List Item 2&#34;,\n    &#125;,\n    &#123;\n        &#34;value&#34;: &#34;List Item 3&#34;,\n    &#125;,\n    &#123;\n        &#34;value&#34;: &#34;List Item 4&#34;,\n    &#125;\n]\n                </pre\n          >\n        </div>\n      </c3m-tab>\n    </c3m-tabs>\n  </div>\n</div>\n\n<div class=\"titleComponent\">\n  <div class=\"descriptionComponent\" id=\"list-thumbnails\">\n    <h3>List with thumbnails</h3>\n\n    <div class=\"demo\">\n      <!-- SIMPLE LIST -->\n      <c3m-list-thumbnails [values]=\"listItem\"> </c3m-list-thumbnails>\n    </div>\n\n    <div class=\"explain\">\n      <dl>\n        <div>\n          <dt>dataList</dt>\n          <dd>The data in the list comes from a JSON file</dd>\n        </div>\n        <div>\n          <dt>placeholder.com</dt>\n          <dd>Fake image with a specific size</dd>\n        </div>\n      </dl>\n    </div>\n\n    <!-- TABS SNIPPETS -->\n    <c3m-tabs class=\"snippets\">\n      <c3m-tab tabTitle=\"To call the component\">\n        <div class=\"code\">\n          <!--?prettify lang=html linenums=true?-->\n          <pre class=\"prettyprint linenums\">\n      &lt;!-- SIMPLE LIST --&gt;\n      &lt;c3m-list-thumbnails&gt;\n      &lt;/c3m-list-thumbnails&gt;\n                </pre\n          >\n        </div>\n      </c3m-tab>\n\n      <c3m-tab tabTitle=\"JSON\">\n        <p class=\"pre-code\">dataList.json</p>\n        <div class=\"code\">\n          <!--?prettify lang=js linenums=true?-->\n          <pre class=\"prettyprint linenums\">\n  [\n      &#123;\n          &#34;value&#34;: &#34;List Item 1&#34;,\n          &#34;url&#34;: &#34;http://via.placeholder.com/150x150&#34;,\n      &#125;,\n      &#123;\n          &#34;value&#34;: &#34;List Item 2&#34;,\n          &#34;url&#34;: &#34;http://via.placeholder.com/150x150&#34;,\n      &#125;,\n      &#123;\n          &#34;value&#34;: &#34;List Item 3&#34;,\n          &#34;url&#34;: &#34;http://via.placeholder.com/150x150&#34;,\n      &#125;,\n      &#123;\n          &#34;value&#34;: &#34;List Item 4&#34;,\n          &#34;url&#34;: &#34;http://via.placeholder.com/150x150&#34;,\n      &#125;\n  ]\n                  </pre\n          >\n        </div>\n      </c3m-tab>\n    </c3m-tabs>\n  </div>\n</div>\n\n<div class=\"titleComponent\">\n  <div class=\"descriptionComponent\" id=\"list-description\">\n    <h3>Description List</h3>\n\n    <div class=\"demo\">\n      <!-- SIMPLE LIST -->\n      <c3m-list-description [values]=\"listItem\"> </c3m-list-description>\n    </div>\n\n    <div class=\"explain\">\n      <dl>\n        <dt>dataList</dt>\n        <dd>The data in the list comes from a JSON file</dd>\n      </dl>\n    </div>\n\n    <!-- TABS SNIPPETS -->\n    <c3m-tabs class=\"snippets\">\n      <c3m-tab tabTitle=\"To call the component\">\n        <div class=\"code\">\n          <!--?prettify lang=html linenums=true?-->\n          <pre class=\"prettyprint linenums\">\n      &lt;!-- SIMPLE LIST --&gt;\n      &lt;c3m-list-description&gt;\n      &lt;/c3m-list-description&gt;\n                </pre\n          >\n        </div>\n      </c3m-tab>\n\n      <c3m-tab tabTitle=\"JSON\">\n        <p class=\"pre-code\">dataList.json</p>\n        <div class=\"code\">\n          <!--?prettify lang=js linenums=true?-->\n          <pre class=\"prettyprint linenums\">\n  [\n      &#123;\n          &#34;title&#34;: &#34;List Title 1&#34;,\n          &#34;content&#34;: &#34;List Content 1&#34;\n      &#125;,\n      &#123;\n          &#34;title&#34;: &#34;List Title 2&#34;,\n          &#34;content&#34;: &#34;List Content 2&#34;\n      &#125;,\n      &#123;\n          &#34;title&#34;: &#34;List Title 3&#34;,\n          &#34;content&#34;: &#34;List Content 3&#34;\n      &#125;,\n      &#123;\n          &#34;title&#34;: &#34;List Title 4&#34;,\n          &#34;content&#34;: &#34;List Content 4&#34;\n      &#125;\n  ]\n                  </pre\n          >\n        </div>\n      </c3m-tab>\n    </c3m-tabs>\n  </div>\n</div>\n"
 
 /***/ }),
 
@@ -6527,12 +6177,29 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
 /* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
 /* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../app.component */ "./src/app/app.component.ts");
+/* harmony import */ var rxjs_operators__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! rxjs/operators */ "./node_modules/rxjs/_esm5/operators/index.js");
+/* harmony import */ var _angular_http__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! @angular/http */ "./node_modules/@angular/http/fesm5/http.js");
+
+
 
 
 
 var ListPageComponent = /** @class */ (function () {
-    function ListPageComponent(app) {
+    function ListPageComponent(app, http) {
+        var _this = this;
         this.app = app;
+        this.http = http;
+        this.listItem = [];
+        // Get Data of a JSON (or other...)
+        http
+            .get('assets/json/dataList.json')
+            .pipe(Object(rxjs_operators__WEBPACK_IMPORTED_MODULE_3__["map"])(function (response) {
+            return response.json();
+        })) // Specify JSON type
+            .subscribe(function (data) {
+            // Set items to response Json
+            _this.listItem = data;
+        });
     }
     ListPageComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
@@ -6541,7 +6208,7 @@ var ListPageComponent = /** @class */ (function () {
             encapsulation: _angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewEncapsulation"].None,
             styles: [__webpack_require__(/*! ./list-page.component.css */ "./src/app/main/list-page/list-page.component.css")]
         }),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_app_component__WEBPACK_IMPORTED_MODULE_2__["AppComponent"]])
+        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_app_component__WEBPACK_IMPORTED_MODULE_2__["AppComponent"], _angular_http__WEBPACK_IMPORTED_MODULE_4__["Http"]])
     ], ListPageComponent);
     return ListPageComponent;
 }());
@@ -7033,7 +6700,7 @@ module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "<!-- TITLE STEP COMPONENT PAGE -->\n<div class=\"panelTitle\">\n  <h2><strong> Step </strong> Component</h2>\n  <ul>\n    <li><a scrollTo href=\"#step\">Multiple Steps</a></li>\n  </ul>\n</div>\n\n<!-- DESCRIPTION STEP COMPONENT PAGE -->\n<div class=\"titleComponent\">\n  <div class=\"descriptionComponent\" id=\"step\">\n    <h3>\n      <svg>\n        <use xlink:href=\"#gitListItem\"></use>\n      </svg>\n      Multiple Steps\n\n      <a href=\"https://github.com/CreamNG/Components/tree/master/step\" class=\"gitBtn\" target=\"_blank\">\n        <svg>\n          <use xlink:href=\"assets/img/icons.svg#gitSvg\"></use>\n        </svg>\n\n        <span>Github</span></a\n      >\n    </h3>\n\n    <div class=\"explain\">\n      <p>\n        This component displays the different steps of a form if divided in different pages/containers. It will\n        automatically detect the previous and next steps.\n      </p>\n    </div>\n\n    <div class=\"demo\">\n      <!-- STEP -->\n      <c3m-step>\n        <!-- STEP ITEMS -->\n        <c3m-step-item isPassed=\"true\" stepLink=\"#\" title=\"Title Of Past Step\"></c3m-step-item>\n        <c3m-step-item isActive=\"true\" title=\"Title Of Active Step\"></c3m-step-item>\n        <c3m-step-item title=\"Title Of Future Step\"></c3m-step-item>\n        <c3m-step-item title=\"Title Of Future Step\"></c3m-step-item>\n        <c3m-step-item title=\"Title Of Future Step\"></c3m-step-item>\n      </c3m-step>\n    </div>\n\n    <c3m-tabs class=\"snippets\">\n      <c3m-tab tabTitle=\"To call the component\">\n        <div class=\"code\">\n          <!--?prettify lang=html linenums=true?-->\n          <pre class=\"prettyprint linenums\">\n  &lt;!-- STEP --&gt;\n  &lt;c3m-step&gt;\n    &lt;!-- STEP ITEMS --&gt;\n    &lt;c3m-step-item isPassed=&#34;true&#34; stepLink=&#34;#&#34; title=&#34;Title Of Past Step&#34;&gt;&lt;/c3m-step-item&gt;\n    &lt;c3m-step-item isActive=&#34;true&#34; title=&#34;Title Of Active Step&#34;&gt;&lt;/c3m-step-item&gt;\n    &lt;c3m-step-item title=&#34;Title Of Future Step&#34;&gt;&lt;/c3m-step-item&gt;\n    &lt;c3m-step-item title=&#34;Title Of Future Step&#34;&gt;&lt;/c3m-step-item&gt;\n    &lt;c3m-step-item title=&#34;Title Of Future Step&#34;&gt;&lt;/c3m-step-item&gt;\n  &lt;/c3m-step&gt;\n            </pre\n          >\n        </div>\n      </c3m-tab>\n    </c3m-tabs>\n\n    <div class=\"properties\">\n      <h4>Properties</h4>\n      <table>\n        <thead>\n          <th>Name</th>\n          <th>Type</th>\n          <th>Default</th>\n          <th>Description</th>\n        </thead>\n        <tbody>\n          <tr>\n            <td>isPassed</td>\n            <td>boolean</td>\n            <td>null</td>\n            <td>Define if a step is valid</td>\n          </tr>\n          <tr>\n            <td>stepLink</td>\n            <td>string</td>\n            <td>null</td>\n            <td>Link to go back to a step (only is a step is passed)</td>\n          </tr>\n          <tr>\n            <td>isActive</td>\n            <td>boolean</td>\n            <td>null</td>\n            <td>Define the active step</td>\n          </tr>\n          <tr>\n            <td>title</td>\n            <td>string</td>\n            <td>null</td>\n            <td>Label of the step</td>\n          </tr>\n        </tbody>\n      </table>\n    </div>\n  </div>\n</div>\n"
+module.exports = "<!-- TITLE STEP COMPONENT PAGE -->\n<div class=\"panelTitle\">\n  <h2><strong> Step </strong> Component</h2>\n  <ul>\n    <li><a scrollTo href=\"#step\">Multiple Steps</a></li>\n  </ul>\n</div>\n\n<!-- DESCRIPTION STEP COMPONENT PAGE -->\n<div class=\"titleComponent\">\n  <div class=\"descriptionComponent\" id=\"step\">\n    <h3>\n      <svg>\n        <use xlink:href=\"#gitListItem\"></use>\n      </svg>\n      Multiple Steps\n\n      <a href=\"https://github.com/CreamNG/Components/tree/master/step\" class=\"gitBtn\" target=\"_blank\">\n        <svg>\n          <use xlink:href=\"assets/img/icons.svg#gitSvg\"></use>\n        </svg>\n\n        <span>Github</span></a\n      >\n    </h3>\n\n    <div class=\"explain\">\n      <p>\n        This component displays the different steps of a form if divided in different pages/containers. It will\n        automatically detect the previous and next steps.\n      </p>\n    </div>\n\n    <div class=\"demo\">\n      <!-- STEP -->\n      <c3m-step activeStep=\"2\" [steps]=\"items\"></c3m-step>\n    </div>\n\n    <c3m-tabs class=\"snippets\">\n      <c3m-tab tabTitle=\"To call the component\">\n        <div class=\"code\">\n          <!--?prettify lang=html linenums=true?-->\n          <pre class=\"prettyprint linenums\">\n&lt;!-- STEP --&gt;\n&lt;c3m-step activeStep=&#34;2&#34; &#91;steps&#93;=&#34;items&#34;&gt;&lt;/c3m-step&gt;\n          </pre>\n        </div>\n      </c3m-tab>\n      <c3m-tab tabTitle=\"Typescript\">\n        <p class=\"pre-code\"></p>\n        <div class=\"code\">\n          <!--?prettify lang=js linenums=true?-->\n          <pre class=\"prettyprint linenums\">\nimport &#123; Component, OnInit &#125; from '@angular/core';\nimport &#123; AppComponent &#125; from '../../app.component';\nimport &#123; StepItem &#125; from '../../../../projects/creamnglib/src/public_api';\n          \n@Component(&#123;\n  selector: 'app-step-page',\n  templateUrl: './step-page.component.html',\n  styleUrls: ['./step-page.component.css']\n&#125;)\nexport class StepPageComponent implements OnInit &#123;\n  items: StepItem[];\n\n  constructor(private app: AppComponent) &#123;&#125;\n          \n  ngOnInit() &#123;\n    this.items = [\n      &#123;title: 'titre1'&#125;,\n      &#123;title: 'titre2'&#125;,\n      &#123;title: 'titre3'&#125;,\n      &#123;title: 'titre4'&#125;,\n      &#123;title: 'titre5'&#125;,\n    ];\n  &#125;\n&#125;\n          </pre>\n        </div>\n      </c3m-tab>\n    </c3m-tabs>\n\n    <div class=\"properties\">\n      <h4>Properties</h4>\n      <table>\n        <thead>\n          <th>Name</th>\n          <th>Type</th>\n          <th>Default</th>\n          <th>Description</th>\n        </thead>\n        <tbody>\n          <tr>\n            <td>steps</td>\n            <td>stepItem[]</td>\n            <td>[]</td>\n            <td>Call the steps array</td>\n          </tr>\n          <tr>\n            <td>stepLink</td>\n            <td>string</td>\n            <td>#</td>\n            <td>Link to go back to a step (only is a step is passed)</td>\n          </tr>\n          <tr>\n            <td>activeStep</td>\n            <td>string</td>\n            <td>null</td>\n            <td>Define the active step</td>\n          </tr>\n          <tr>\n            <td>title</td>\n            <td>string</td>\n            <td>null</td>\n            <td>Label of the step</td>\n          </tr>\n        </tbody>\n      </table>\n    </div>\n  </div>\n</div>\n"
 
 /***/ }),
 
@@ -7058,7 +6725,13 @@ var StepPageComponent = /** @class */ (function () {
         this.app = app;
     }
     StepPageComponent.prototype.ngOnInit = function () {
-        var subComp = ['step-item'];
+        this.items = [
+            { title: 'titre1' },
+            { title: 'titre2' },
+            { title: 'titre3' },
+            { title: 'titre4' },
+            { title: 'titre5' }
+        ];
     };
     StepPageComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
@@ -7069,65 +6742,6 @@ var StepPageComponent = /** @class */ (function () {
         tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_app_component__WEBPACK_IMPORTED_MODULE_2__["AppComponent"]])
     ], StepPageComponent);
     return StepPageComponent;
-}());
-
-
-
-/***/ }),
-
-/***/ "./src/app/main/table-page/table-page.component.css":
-/*!**********************************************************!*\
-  !*** ./src/app/main/table-page/table-page.component.css ***!
-  \**********************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "\n/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiJzcmMvYXBwL21haW4vdGFibGUtcGFnZS90YWJsZS1wYWdlLmNvbXBvbmVudC5jc3MifQ== */"
-
-/***/ }),
-
-/***/ "./src/app/main/table-page/table-page.component.html":
-/*!***********************************************************!*\
-  !*** ./src/app/main/table-page/table-page.component.html ***!
-  \***********************************************************/
-/*! no static exports found */
-/***/ (function(module, exports) {
-
-module.exports = "<!-- TITLE TABLE COMPONENT PAGE -->\n<div class=\"panelTitle\">\n  <h2><strong>Table</strong> Component</h2>\n  <ul>\n    <li><a scrollTo href=\"table\">Responsive row</a></li>\n  </ul>\n</div>\n\n\n<!-- DESCRIPTION TABLE COMPONENT PAGE -->\n<div class=\"titleComponent\">\n  <div class=\"descriptionComponent\" id=\"table\">\n    <h3>Responsive | Row Table</h3>\n\n    <div class=\"explain\">\n      <p>A fully responsive table suitable for when it makes sense to consult rows independently.</p>\n      <p>Please, note that this component uses <code>max-width</code> breakpoint; this makes the \"transformation\"\n        of the data easier and less verbose.</p>\n    </div>\n\n    <div class=\"demo\">\n        <!-- TABLE DEMO -->\n        <c3m-column-table></c3m-column-table>\n    </div>\n\n    <div class=\"explain\">\n      <dl>\n        <div>\n          <dt>title class</dt>\n          <dd>Necessary to make the table responsive</dd>\n        </div>\n        <div>\n          <dt>col scope</dt>\n          <dd>Necessary to make the table responsive</dd>\n        </div>\n      </dl>\n    </div>\n\n    <!-- TABS SNIPPETS -->\n    <c3m-tabs class=\"snippets\">\n      <c3m-tab tabTitle=\"To call the component\">\n        <div class=\"code\">\n          <!--?prettify lang=html linenums=true?-->\n          <pre class=\"prettyprint linenums\">\n  &#x3C;c3m-column-table&#x3E;&#x3C;/c3m-column-table&#x3E;\n          </pre>\n        </div>\n      </c3m-tab>\n    </c3m-tabs>\n\n  </div>\n</div>\n"
-
-/***/ }),
-
-/***/ "./src/app/main/table-page/table-page.component.ts":
-/*!*********************************************************!*\
-  !*** ./src/app/main/table-page/table-page.component.ts ***!
-  \*********************************************************/
-/*! exports provided: TablePageComponent */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-__webpack_require__.r(__webpack_exports__);
-/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, "TablePageComponent", function() { return TablePageComponent; });
-/* harmony import */ var tslib__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! tslib */ "./node_modules/tslib/tslib.es6.js");
-/* harmony import */ var _angular_core__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @angular/core */ "./node_modules/@angular/core/fesm5/core.js");
-/* harmony import */ var _app_component__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ../../app.component */ "./src/app/app.component.ts");
-
-
-
-var TablePageComponent = /** @class */ (function () {
-    function TablePageComponent(app) {
-        this.app = app;
-    }
-    TablePageComponent.prototype.ngOnInit = function () { };
-    TablePageComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
-        Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
-            selector: 'app-table-page',
-            template: __webpack_require__(/*! ./table-page.component.html */ "./src/app/main/table-page/table-page.component.html"),
-            encapsulation: _angular_core__WEBPACK_IMPORTED_MODULE_1__["ViewEncapsulation"].None,
-            styles: [__webpack_require__(/*! ./table-page.component.css */ "./src/app/main/table-page/table-page.component.css")]
-        }),
-        tslib__WEBPACK_IMPORTED_MODULE_0__["__metadata"]("design:paramtypes", [_app_component__WEBPACK_IMPORTED_MODULE_2__["AppComponent"]])
-    ], TablePageComponent);
-    return TablePageComponent;
 }());
 
 
@@ -7152,7 +6766,7 @@ module.exports = "c3m-tabs.presentationTabV .tabsContainer {\n  margin: 0;\n}\n\
 /*! no static exports found */
 /***/ (function(module, exports) {
 
-module.exports = "\n<!-- TITLE TABS COMPONENT PAGE -->\n<div class=\"panelTitle\">\n  <h2> <strong> Tabs </strong> Component </h2>\n  <ul>\n    <li><a href=\"#tabs\">Normal Tabs</a></li>\n  </ul>\n</div>\n\n\n<!-- DESCRIPTION TABS COMPONENT PAGE -->\n<div class=\"titleComponent\">\n  <div class=\"descriptionComponent\" id=\"tabs\">\n\n      <h3>Normal Tabs</h3>\n\n      <div class=\"explain\">\n          <p>The tab component is composed by two different components: one\n            for the tab container (<code>TabsComponent</code>) and the other one for the tab content (<code>TabComponent</code>).</p>\n      </div>\n\n    <div class=\"demo\">\n      <!-- TABS DEMO -->\n      <c3m-tabs class=\"presentationTabV\">\n        <c3m-tab tabTitle=\"Title1\">\n          Content 1\n        </c3m-tab>\n        <c3m-tab tabTitle=\"Title2\">\n          Content 2\n        </c3m-tab>\n        <c3m-tab tabTitle=\"Title3\">\n          Content 3\n        </c3m-tab>\n        <c3m-tab tabTitle=\"Title4\">\n          Content 4\n        </c3m-tab>\n      </c3m-tabs>\n    </div>\n    <div class=\"explain\">\n      <dl>\n        <div>\n          <dt>tabTitle</dt>\n          <dd>title of the tab</dd>\n        </div>\n        <div>\n          <dt>Content text</dt>\n          <dd>Content of the tab (ng-content)</dd>\n        </div>\n      </dl>\n    </div>\n\n    <!-- TABS SNIPPETS -->\n    <c3m-tabs class=\"snippets\">\n      <c3m-tab tabTitle=\"HTML\">\n        <p class=\"pre-code\"> To call the component </p>\n        <div class=\"code\">\n           <!--?prettify lang=html linenums=true?-->\n            <pre class=\"prettyprint linenums\">\n              <code>\n                  &#x3C;c3m-tabs &#x3E;\n                      &#x3C;c3m-tab tabTitle=&#x22;Title1&#x22;&#x3E;\n                          Content 1\n                      &#x3C;/c3m-tab&#x3E;\n                      &#x3C;c3m-tab tabTitle=&#x22;Title2&#x22;&#x3E;\n                          Content 2\n                      &#x3C;/c3m-tab&#x3E;\n                      &#x3C;c3m-tab tabTitle=&#x22;Title3&#x22;&#x3E;\n                          Content 3\n                      &#x3C;/c3m-tab&#x3E;\n                      &#x3C;c3m-tab tabTitle=&#x22;Title4&#x22;&#x3E;\n                          Content 4\n                      &#x3C;/c3m-tab&#x3E;\n                  &#x3C;/c3m-tabs&#x3E;\n              </code>\n            </pre>\n        </div>\n      </c3m-tab>\n    </c3m-tabs>\n\n  </div>\n\n</div>\n"
+module.exports = "<!-- TITLE TABS COMPONENT PAGE -->\n<div class=\"panelTitle\">\n  <h2><strong> Tabs </strong> Component</h2>\n  <ul>\n    <li><a href=\"#tabs\">Normal Tabs</a></li>\n  </ul>\n</div>\n\n<!-- DESCRIPTION TABS COMPONENT PAGE -->\n<div class=\"titleComponent\">\n  <div class=\"descriptionComponent\" id=\"tabs\">\n    <h3>Normal Tabs</h3>\n\n    <div class=\"explain\">\n      <p>\n        The tab component is composed by two different components: one for the tab container\n        (<code>TabsComponent</code>) and the other one for the tab content (<code>TabComponent</code>).\n      </p>\n    </div>\n\n    <div class=\"demo\">\n      <!-- TABS DEMO -->\n      <c3m-tabs class=\"presentationTabV\">\n        <c3m-tab tabTitle=\"Title1\">\n          Content 1\n        </c3m-tab>\n        <c3m-tab tabTitle=\"Title2\">\n          Content 2\n        </c3m-tab>\n        <c3m-tab tabTitle=\"Title3\">\n          Content 3\n        </c3m-tab>\n        <c3m-tab tabTitle=\"Title4\">\n          Content 4\n        </c3m-tab>\n      </c3m-tabs>\n    </div>\n    <div class=\"explain\">\n      <dl>\n        <div>\n          <dt>tabTitle</dt>\n          <dd>title of the tab</dd>\n        </div>\n        <div>\n          <dt>Content text</dt>\n          <dd>Content of the tab (ng-content)</dd>\n        </div>\n      </dl>\n    </div>\n\n    <!-- TABS SNIPPETS -->\n    <c3m-tabs class=\"snippets\">\n      <c3m-tab tabTitle=\"HTML\">\n        <p class=\"pre-code\">To call the component</p>\n        <div class=\"code\">\n          <!--?prettify lang=html linenums=true? -->\n          <pre class=\"prettyprint linenums\">\n              <code>\n                  &#x3C;c3m-tabs &#x3E;\n                      &#x3C;c3m-tab tabTitle=&#x22;Title1&#x22;&#x3E;\n                          Content 1\n                      &#x3C;/c3m-tab&#x3E;\n                      &#x3C;c3m-tab tabTitle=&#x22;Title2&#x22;&#x3E;\n                          Content 2\n                      &#x3C;/c3m-tab&#x3E;\n                      &#x3C;c3m-tab tabTitle=&#x22;Title3&#x22;&#x3E;\n                          Content 3\n                      &#x3C;/c3m-tab&#x3E;\n                      &#x3C;c3m-tab tabTitle=&#x22;Title4&#x22;&#x3E;\n                          Content 4\n                      &#x3C;/c3m-tab&#x3E;\n                  &#x3C;/c3m-tabs&#x3E;\n              </code>\n            </pre>\n        </div>\n      </c3m-tab>\n    </c3m-tabs>\n  </div>\n</div>\n"
 
 /***/ }),
 
@@ -7176,9 +6790,7 @@ var TabsPageComponent = /** @class */ (function () {
     function TabsPageComponent(app) {
         this.app = app;
     }
-    TabsPageComponent.prototype.ngOnInit = function () {
-        var subComp = ['tabs-item'];
-    };
+    TabsPageComponent.prototype.ngOnInit = function () { };
     TabsPageComponent = tslib__WEBPACK_IMPORTED_MODULE_0__["__decorate"]([
         Object(_angular_core__WEBPACK_IMPORTED_MODULE_1__["Component"])({
             selector: 'app-tabs-page',

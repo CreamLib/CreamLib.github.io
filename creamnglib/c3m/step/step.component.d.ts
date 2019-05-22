@@ -1,17 +1,18 @@
-import { AfterViewChecked, AfterViewInit, ChangeDetectorRef, ElementRef } from '@angular/core';
-import { StepItemComponent } from './step-item/step-item.component';
-export declare class StepComponent implements AfterViewInit, AfterViewChecked {
+import { AfterViewInit, ChangeDetectorRef, ElementRef, QueryList, OnInit } from '@angular/core';
+import { StepItem } from '../../step-item';
+export declare class StepComponent implements OnInit, AfterViewInit {
     private cdr;
-    itemStepTab: StepItemComponent[];
-    theActiveStepItem: number;
+    activeStep: string;
+    stepLink: string;
+    indexNum: number;
     isOver: boolean;
-    widthBreak: number;
-    itemsStepTabReference: ElementRef[];
+    stepLiReference: QueryList<ElementRef>;
+    stepLi: Array<ElementRef>;
+    steps: StepItem[];
     sizeInit: number;
-    StepItemComponentBis: typeof StepItemComponent;
+    widthBreak: number;
     constructor(cdr: ChangeDetectorRef);
+    ngOnInit(): void;
     ngAfterViewInit(): void;
-    ngAfterViewChecked(): void;
     onResize(event: any): void;
-    addTab(stepItem: StepItemComponent): void;
 }

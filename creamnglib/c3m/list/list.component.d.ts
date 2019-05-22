@@ -1,9 +1,5 @@
-import { OnInit } from '@angular/core';
-import { Http } from '@angular/http';
-export declare class ListComponent implements OnInit {
-    private http;
+import { ListValue } from './list.model';
+export declare class ListComponent {
     title: any;
-    constructor(http: Http);
-    listItem: any[];
-    ngOnInit(): void;
+    values: ListValue[];
 }

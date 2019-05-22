@@ -1,8 +1,8 @@
 import { OnInit, AfterViewInit } from '@angular/core';
 import { TabsComponent } from '../tabs.component';
 export declare class TabComponent implements OnInit, AfterViewInit {
-    tabTitle: any;
-    isActive: boolean;
+    tabTitle: string;
+    active: boolean;
     idTab: number;
     isDisabled: boolean;
     tabID: string;

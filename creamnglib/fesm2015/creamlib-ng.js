@@ -2104,42 +2104,27 @@ InputUrlComponent.propDecorators = {
  * @fileoverview added by tsickle
  * @suppress {checkTypes,extraRequire,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
 class ListComponent {
-    // Constructor
-    /**
-     * @param {?} http
-     */
-    constructor(http) {
-        this.http = http;
-    }
-    // On Init
-    /**
-     * @return {?}
-     */
-    ngOnInit() {
-        // Get Data of a JSON (or other...)
-        from(this.http.get('assets/json/dataList.json'))
-            .pipe(map((response) => response.json())) // Specify JSON type
-            .subscribe(data => {
-            // Set items to response Json
-            this.listItem = data;
-        });
+    constructor() {
+        this.values = [];
     }
 }
 ListComponent.decorators = [
     { type: Component, args: [{
                 selector: 'c3m-list',
-                template: "<ul>\n  <li *ngFor=\"let item of listItem\">{{ item.value }}</li>\n</ul>\n",
+                template: "<ul>\n  <li *ngFor=\"let item of values\">{{ item.value }}</li>\n</ul>\n",
                 encapsulation: ViewEncapsulation.None,
                 styles: ["c3m-list ul{list-style-type:disc;margin-left:2rem}c3m-list li+li{margin-top:.5em}"]
             }] }
 ];
-/** @nocollapse */
-ListComponent.ctorParameters = () => [
-    { type: Http }
-];
 ListComponent.propDecorators = {
-    title: [{ type: Input }]
+    title: [{ type: Input }],
+    values: [{ type: Input }]
 };
 
 /**
@@ -2147,41 +2132,18 @@ ListComponent.propDecorators = {
  * @suppress {checkTypes,extraRequire,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 class ListDescriptionComponent {
-    // Constructor
-    /**
-     * @param {?} http
-     */
-    constructor(http) {
-        this.http = http;
-    }
-    // On Init
-    /**
-     * @return {?}
-     */
-    ngOnInit() {
-        // Get Data of a JSON (or other...)
-        from(this.http.get('assets/json/dataList.json'))
-            .pipe(map((response) => response.json())) // Specify JSON type
-            .subscribe(data => {
-            // Set items to response Json
-            this.listItem = data;
-        });
-    }
 }
 ListDescriptionComponent.decorators = [
     { type: Component, args: [{
                 selector: 'c3m-list-description',
-                template: "<dl *ngFor=\"let item of listItem\">\n  <dt>{{ item.title }}</dt>\n  <dd>{{ item.content }}</dd>\n</dl>\n",
+                template: "<dl *ngFor=\"let item of values\">\n  <dt>{{ item.title }}</dt>\n  <dd>{{ item.content }}</dd>\n</dl>\n",
                 encapsulation: ViewEncapsulation.None,
                 styles: ["c3m-list-description dl{margin:1rem 0}c3m-list-description dt{font-family:var(--stack-b)}c3m-list-description dd{margin:.25em 0 0 1em}"]
             }] }
 ];
-/** @nocollapse */
-ListDescriptionComponent.ctorParameters = () => [
-    { type: Http }
-];
 ListDescriptionComponent.propDecorators = {
-    title: [{ type: Input }]
+    title: [{ type: Input }],
+    values: [{ type: Input }]
 };
 
 /**
@@ -2189,41 +2151,18 @@ ListDescriptionComponent.propDecorators = {
  * @suppress {checkTypes,extraRequire,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 class ListOrderComponent {
-    // Constructor
-    /**
-     * @param {?} http
-     */
-    constructor(http) {
-        this.http = http;
-    }
-    // On Init
-    /**
-     * @return {?}
-     */
-    ngOnInit() {
-        // Get Data of a JSON (or other...)
-        from(this.http.get('assets/json/dataList.json'))
-            .pipe(map((response) => response.json())) // Specify JSON type
-            .subscribe(data => {
-            // Set items to response Json
-            this.listItem = data;
-        });
-    }
 }
 ListOrderComponent.decorators = [
     { type: Component, args: [{
                 selector: 'c3m-list-order',
-                template: "<ol>\n  <li *ngFor=\"let item of listItem\">{{ item.value }}</li>\n</ol>\n",
+                template: "<ol>\n  <li *ngFor=\"let item of values\">{{ item.value }}</li>\n</ol>\n",
                 encapsulation: ViewEncapsulation.None,
                 styles: ["c3m-list-order ol{list-style-type:decimal;margin-left:2rem}c3m-list-order li+li{margin-top:.5em}"]
             }] }
 ];
-/** @nocollapse */
-ListOrderComponent.ctorParameters = () => [
-    { type: Http }
-];
 ListOrderComponent.propDecorators = {
-    title: [{ type: Input }]
+    title: [{ type: Input }],
+    values: [{ type: Input }]
 };
 
 /**
@@ -2231,41 +2170,18 @@ ListOrderComponent.propDecorators = {
  * @suppress {checkTypes,extraRequire,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 class ListThumbnailsComponent {
-    // Constructor
-    /**
-     * @param {?} http
-     */
-    constructor(http) {
-        this.http = http;
-    }
-    // On Init
-    /**
-     * @return {?}
-     */
-    ngOnInit() {
-        // Get Data of a JSON (or other...)
-        from(this.http.get('assets/json/dataList.json'))
-            .pipe(map((response) => response.json())) // Specify JSON type
-            .subscribe(data => {
-            // Set items to response Json
-            this.listItem = data;
-        });
-    }
 }
 ListThumbnailsComponent.decorators = [
     { type: Component, args: [{
                 selector: 'c3m-list-thumbnails',
-                template: "<ul>\n  <li *ngFor=\"let item of listItem\">\n    <p><img src=\"{{ item.url }}\" alt=\"fake image\" /></p>\n    <div class=\"content\">\n      {{ item.value }}\n    </div>\n  </li>\n</ul>\n",
+                template: "<ul>\n  <li *ngFor=\"let item of values\">\n    <p><img src=\"{{ item.url }}\" alt=\"fake image\" /></p>\n    <div class=\"content\">\n      {{ item.value }}\n    </div>\n  </li>\n</ul>\n",
                 encapsulation: ViewEncapsulation.None,
                 styles: ["c3m-list-thumbnails li{display:flex;align-items:center;max-width:35em}c3m-list-thumbnails li+li{padding-top:1rem;margin-top:1rem;border-top:1px solid var(--n-medium)}c3m-list-thumbnails li>p{flex-basis:30%;max-width:180px}c3m-list-thumbnails .content{flex-basis:65%;line-height:1.45}"]
             }] }
 ];
-/** @nocollapse */
-ListThumbnailsComponent.ctorParameters = () => [
-    { type: Http }
-];
 ListThumbnailsComponent.propDecorators = {
-    title: [{ type: Input }]
+    title: [{ type: Input }],
+    values: [{ type: Input }]
 };
 
 /**
@@ -2661,113 +2577,32 @@ SpinnerProgressComponent.propDecorators = {
  * @fileoverview added by tsickle
  * @suppress {checkTypes,extraRequire,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
-class StepItemComponent {
-    /* CONSTRUCTOR */
-    /**
-     * @param {?} step
-     * @param {?} cdr
-     */
-    constructor(step, cdr) {
-        this.cdr = cdr;
-        this.isActive = false;
-        this.isPassed = false;
-        this.stepLink = '';
-        step.addTab(this); // Add item on Items Tab
-    }
-    /**
-     * @param {?} value
-     * @return {?}
-     */
-    set Past(value) {
-        this._past = value;
-        this.cdr.detectChanges();
-    }
-    /**
-     * @return {?}
-     */
-    get Past() {
-        return this._past;
-    }
-    /**
-     * @param {?} value
-     * @return {?}
-     */
-    set Future(value) {
-        this._future = value;
-        this.cdr.detectChanges();
-    }
-    /**
-     * @return {?}
-     */
-    get Future() {
-        return this._future;
-    }
-    /**
-     * @return {?}
-     */
-    ngAfterViewInit() {
-        this.reference = this.itemRef;
-    }
-}
-StepItemComponent.decorators = [
-    { type: Component, args: [{
-                selector: 'c3m-step-item',
-                template: "<!-- Step Item -->\n<li #items [ngClass]=\"{ active: isActive, past: Past, future: Future }\" [c3mStepCurrent]=\"isActive\">\n  <ng-container *ngIf=\"isPassed\">\n    <a href=\"{{ stepLink }}\">{{ title }}</a>\n  </ng-container>\n  <ng-container *ngIf=\"!isPassed\">\n    {{ title }}\n  </ng-container>\n</li>\n",
-                styles: [""]
-            }] }
-];
-/** @nocollapse */
-StepItemComponent.ctorParameters = () => [
-    { type: StepComponent },
-    { type: ChangeDetectorRef }
-];
-StepItemComponent.propDecorators = {
-    itemRef: [{ type: ViewChild, args: ['items',] }],
-    title: [{ type: Input }],
-    isActive: [{ type: Input }],
-    isPassed: [{ type: Input }],
-    stepLink: [{ type: Input }],
-    indexStep: [{ type: Input }],
-    reference: [{ type: Input }],
-    Past: [{ type: Input, args: ['isPast',] }],
-    Future: [{ type: Input, args: ['isFuture',] }]
-};
-
-/**
- * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
- */
 class StepComponent {
-    /* CONSTRUCTOR */
     /**
      * @param {?} cdr
      */
     constructor(cdr) {
         this.cdr = cdr;
-        /* VARIABLES */
-        this.itemStepTab = [];
-        this.itemsStepTabReference = [];
+        this.stepLink = '#';
         this.sizeInit = 0;
-        this.StepItemComponentBis = StepItemComponent;
     }
-    /* AFTER VIEW INIT */
+    /**
+     * @return {?}
+     */
+    ngOnInit() {
+        this.indexNum = parseInt(this.activeStep, 10) - 1;
+    }
     /**
      * @return {?}
      */
     ngAfterViewInit() {
-        this.itemStepTab.forEach((StepItemComponentBis, index) => {
-            StepItemComponentBis.indexStep = index + 1;
-            this.itemsStepTabReference.push(StepItemComponentBis.reference);
-            if (StepItemComponentBis.isActive) {
-                this.theActiveStepItem = StepItemComponentBis.indexStep;
-            }
-        });
+        this.stepLi = this.stepLiReference.toArray();
         /* CALCUL BREAKPOINT ON PAGE LOAD */
-        for (let i = 0; i < this.itemsStepTabReference.length - 1; i++) {
-            this.sizeInit = this.itemsStepTabReference[i].nativeElement.clientWidth + this.sizeInit;
+        for (let i = 0; i < this.stepLi.length; i++) {
+            this.sizeInit = this.stepLi[i].nativeElement.clientWidth + this.sizeInit;
+            console.log(this.sizeInit);
         }
-        if (this.itemsStepTabReference[this.itemsStepTabReference.length - 1].nativeElement.offsetTop !==
-            this.itemsStepTabReference[0].nativeElement.offsetTop) {
+        if (this.stepLi[this.stepLi.length - 1].nativeElement.offsetTop !== this.stepLi[0].nativeElement.offsetTop) {
             this.isOver = true;
         }
         else {
@@ -2775,39 +2610,13 @@ class StepComponent {
         }
         this.cdr.detectChanges();
     }
-    /* AFTER VIEW CHECK */
-    /**
-     * @return {?}
-     */
-    ngAfterViewChecked() {
-        /* For Each items */
-        this.itemStepTab.forEach((StepItemComponentBis, index) => {
-            /* if after the active item, add class future */
-            if (index + 1 > this.theActiveStepItem) {
-                StepItemComponentBis.Future = true;
-            }
-            else {
-                StepItemComponentBis.Future = false;
-            }
-            /* if before the active item, add class past */
-            if (index + 1 < this.theActiveStepItem) {
-                StepItemComponentBis.Past = true;
-            }
-            else {
-                StepItemComponentBis.Past = false;
-            }
-        });
-    }
-    /* Resize breakpoint tab*/
     /**
      * @param {?} event
      * @return {?}
      */
     onResize(event) {
-        if (this.itemsStepTabReference[this.itemsStepTabReference.length - 1].nativeElement.offsetTop >
-            this.itemsStepTabReference[0].nativeElement.offsetTop) {
-            if (this.itemsStepTabReference[this.itemsStepTabReference.length - 1].nativeElement.offsetTop >
-                this.itemsStepTabReference[0].nativeElement.offsetTop &&
+        if (this.stepLi[this.stepLi.length - 1].nativeElement.offsetTop > this.stepLi[0].nativeElement.offsetTop) {
+            if (this.stepLi[this.stepLi.length - 1].nativeElement.offsetTop > this.stepLi[0].nativeElement.offsetTop &&
                 this.isOver !== true) {
                 this.widthBreak = event.target.innerWidth;
                 this.isOver = true;
@@ -2829,22 +2638,13 @@ class StepComponent {
         }
         this.cdr.detectChanges();
     }
-    /* ADD AN ITEM INTO ITEMS TAB */
-    /**
-     * @param {?} stepItem
-     * @return {?}
-     */
-    addTab(stepItem) {
-        stepItem.isActive = false; // And set isActive var to False
-        this.itemStepTab.push(stepItem);
-    }
 }
 StepComponent.decorators = [
     { type: Component, args: [{
                 selector: 'c3m-step',
-                template: "<!-- Items List -->\n<ol #items [ngClass]=\"{ over: isOver }\">\n  <ng-content></ng-content>\n</ol>\n",
+                template: "<ol [ngClass]=\"{ over: isOver }\">\n  <li\n    #stepLi\n    *ngFor=\"let step of steps; let i = index\"\n    [ngClass]=\"{ active: i === this.indexNum, past: i < this.indexNum, future: i > this.indexNum }\"\n    [c3mStepCurrent]=\"i === this.indexNum\"\n  >\n    <ng-container *ngIf=\"i < this.indexNum\">\n      <a href=\"{{ stepLink }}\">{{ step.title }}</a>\n    </ng-container>\n    <ng-container *ngIf=\"!(i < this.indexNum)\">\n      {{ step.title }}\n    </ng-container>\n  </li>\n</ol>\n",
                 encapsulation: ViewEncapsulation.None,
-                styles: ["c3m-step ol{counter-reset:step}c3m-step ol li{display:inline-block;position:relative;list-style-type:none;font-size:.9em;text-align:center;color:var(--n-dark);background-color:rgba(255,255,255,0);padding:.8em 1em;margin-left:-5px}c3m-step ol li::before{display:block;position:relative;width:1.5em;height:1.5em;line-height:1.5em;font-size:1.2em;content:counter(step);counter-increment:step;text-align:center;color:var(--text-inv);background-color:var(--n-dark);border-radius:1.5em;margin:0 auto .6rem;z-index:2}c3m-step ol li::after{display:block;position:absolute;width:100%;height:5px;top:1.5em;left:0;content:'';background-color:var(--n-dark);z-index:1}c3m-step-item:first-child li::after{width:50%;left:50%}c3m-step-item:last-child li::after{width:50%;left:auto;right:50%}c3m-step ol li.past{color:var(--n-dark);background-color:rgba(255,255,255,0)}c3m-step ol li.past::before{content:'';color:var(--text-inv);background:var(--main-color) url(/assets/img/sprite.svg) 3px -429px no-repeat}c3m-step ol li.past::after{background-color:var(--main-color)}c3m-step ol li.active::before{color:var(--text-inv);background-color:var(--main-color)}c3m-step ol li.active::after{background-color:var(--n-dark);background-image:linear-gradient(90deg,var(--main-color) 50%,var(--n-dark) 50%)}c3m-step ol li.future{color:var(--n-dark);background-color:var(--n-light)}c3m-step ol li.future::before{color:var(--n-light);background-color:var(--n-dark)}c3m-step ol.over li{display:block;width:100%;text-align:left;padding:.5rem}c3m-step ol.over li:before{display:inline-block;margin:0}"]
+                styles: ["c3m-step ol{counter-reset:step}c3m-step ol li{display:inline-block;position:relative;list-style-type:none;font-size:.9em;text-align:center;color:var(--n-dark);background-color:rgba(255,255,255,0);padding:.8em 1em;margin-left:-5px}c3m-step ol li::before{display:block;position:relative;width:1.5em;height:1.5em;line-height:1.5em;font-size:1.2em;content:counter(step);counter-increment:step;text-align:center;color:var(--text-inv);background-color:var(--n-dark);border-radius:1.5em;margin:0 auto .6rem;z-index:2}c3m-step ol li::after{display:block;position:absolute;width:100%;height:5px;top:1.5em;left:0;content:'';background-color:var(--n-dark);z-index:1}c3m-step ol li:first-child li::after{width:50%;left:50%}c3m-step ol li:last-child li::after{width:50%;left:auto;right:50%}c3m-step ol li.past{color:var(--n-dark);background-color:rgba(255,255,255,0)}c3m-step ol li.past::before{content:'';color:var(--text-inv);background:var(--main-color) url(/assets/img/sprite.svg) 3px -429px no-repeat}c3m-step ol li.past::after{background-color:var(--main-color)}c3m-step ol li.active::before{color:var(--text-inv);background-color:var(--main-color)}c3m-step ol li.active::after{background-color:var(--n-dark);background-image:linear-gradient(90deg,var(--main-color) 50%,var(--n-dark) 50%)}c3m-step ol li.future{color:var(--n-dark);background-color:var(--n-light)}c3m-step ol li.future::before{color:var(--n-light);background-color:var(--n-dark)}c3m-step ol.over li{display:block;width:100%;text-align:left;padding:.5rem}c3m-step ol.over li:before{display:inline-block;margin:0}"]
             }] }
 ];
 /** @nocollapse */
@@ -2852,93 +2652,12 @@ StepComponent.ctorParameters = () => [
     { type: ChangeDetectorRef }
 ];
 StepComponent.propDecorators = {
+    activeStep: [{ type: Input }],
+    stepLink: [{ type: Input }],
+    stepLiReference: [{ type: ViewChildren, args: ['stepLi',] }],
+    steps: [{ type: Input }],
     onResize: [{ type: HostListener, args: ['window:resize', ['$event'],] }]
 };
-
-/**
- * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
- */
-class ColumnTableComponent {
-    constructor() { }
-    /**
-     * @return {?}
-     */
-    ngAfterViewInit() {
-        /*const heads = document.querySelectorAll('thead th');
-        const titles = [];
-        for ( let x = 0; x < heads.length ; x++) {
-          titles.push(heads[x].innerHTML);
-        }
-    
-        const bodyTr = document.querySelectorAll('tbody tr');
-    
-        for ( let i = 0; i < bodyTr.length; i++) {
-            const bodyTrTd = bodyTr[i].querySelectorAll('td');
-            for ( let j = 0; j < bodyTrTd.length; j++) {
-    
-                const strong = document.createElement('strong');
-                const title = document.createTextNode(titles[j]);
-                strong.appendChild(title);
-                bodyTrTd[j].insertBefore(strong, bodyTrTd[j].childNodes[0]);
-            }
-        }*/
-    }
-}
-ColumnTableComponent.decorators = [
-    { type: Component, args: [{
-                selector: 'c3m-column-table',
-                template: "<table>\n  <caption>\n    Responsive Table\n  </caption>\n  <thead>\n    <tr>\n      <th scope=\"col\">Movie Title</th>\n      <th scope=\"col\">Duration</th>\n      <th scope=\"col\">Year</th>\n      <th scope=\"col\">Type</th>\n      <th scope=\"col\">Country</th>\n    </tr>\n  </thead>\n  <tbody>\n    <tr>\n      <th scope=\"row\" data-header=\"Movie Title\">Inception</th>\n      <td data-header=\"Duration\">148</td>\n      <td data-header=\"Year\">2010</td>\n      <td data-header=\"Category\">SF</td>\n      <td data-header=\"Country\">UK</td>\n    </tr>\n    <tr>\n      <th scope=\"row\" data-header=\"Movie Title\">The dark knight</th>\n      <td data-header=\"Duration\">164</td>\n      <td data-header=\"Year\">2012</td>\n      <td data-header=\"Category\">SH</td>\n      <td data-header=\"Country\">USA/UK</td>\n    </tr>\n    <tr>\n      <th scope=\"row\" data-header=\"Movie Title\">Pulp Fiction</th>\n      <td data-header=\"Duration\">154</td>\n      <td data-header=\"Year\">1994</td>\n      <td data-header=\"Category\">Gangster</td>\n      <td data-header=\"Country\">USA</td>\n    </tr>\n  </tbody>\n</table>\n",
-                encapsulation: ViewEncapsulation.None,
-                styles: ["c3m-column-table table{width:100%;text-align:left}c3m-column-table caption{font:1.5em var(--stack);text-align:left;margin-bottom:.6rem}c3m-column-table td,c3m-column-table th{color:var(--body-text);background-color:var(--body-bg);padding:1rem .5rem}c3m-column-table thead th{font-size:1.3em;border-bottom:2px solid var(--n-dark)}c3m-column-table td{border-bottom:1px solid var(--n-medium)}@media screen and (max-width:1000px){c3m-column-table table{display:block;width:100%;padding:.5rem;border-radius:.3em;border:none}c3m-column-table caption{display:block;font-size:1.5em}c3m-column-table tbody{display:block}c3m-column-table thead{display:none}c3m-column-table tbody tr{display:block;margin-bottom:2rem}c3m-column-table tbody th,c3m-column-table th{background-color:var(--n-light);padding:0 0 .5rem}c3m-column-table td{display:block;background-color:initial;padding:.5rem 0;border:none;border-bottom:1px solid var(--n-medium)}c3m-column-table td::before{display:inline-block;width:45%;content:attr(data-header);padding-right:2rem}c3m-column-table tbody strong{display:inline-block;width:6em;color:#f5f5f5}}"]
-            }] }
-];
-/** @nocollapse */
-ColumnTableComponent.ctorParameters = () => [];
-
-/**
- * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
- */
-class ToggleTableComponent {
-    constructor() { }
-    /**
-     * @return {?}
-     */
-    ngOnInit() { }
-}
-ToggleTableComponent.decorators = [
-    { type: Component, args: [{
-                selector: 'c3m-toggle-table',
-                template: "<p>\n  toggle-table works!\n</p>\n",
-                encapsulation: ViewEncapsulation.None,
-                styles: [""]
-            }] }
-];
-/** @nocollapse */
-ToggleTableComponent.ctorParameters = () => [];
-
-/**
- * @fileoverview added by tsickle
- * @suppress {checkTypes,extraRequire,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
- */
-class PageSwipeTableComponent {
-    constructor() { }
-    /**
-     * @return {?}
-     */
-    ngOnInit() { }
-}
-PageSwipeTableComponent.decorators = [
-    { type: Component, args: [{
-                selector: 'c3m-page-swipe-table',
-                template: "<p>\n  page-swipe-table works!\n</p>\n",
-                encapsulation: ViewEncapsulation.None,
-                styles: [""]
-            }] }
-];
-/** @nocollapse */
-PageSwipeTableComponent.ctorParameters = () => [];
 
 /**
  * @fileoverview added by tsickle
@@ -2950,7 +2669,6 @@ class TabComponent {
      * @param {?} tabs
      */
     constructor(tabs) {
-        tabs.addTab(this);
         this.idTab = this.randomID();
     }
     /* ID for Accessbility */
@@ -2981,7 +2699,7 @@ class TabComponent {
 TabComponent.decorators = [
     { type: Component, args: [{
                 selector: 'c3m-tab',
-                template: "<div class=\"content\" [attr.aria-hidden]=\"!isActive\" [attr.aria-labeledby]=\"tabID\" id=\"{{ panelID }}\">\n  <ng-content></ng-content>\n</div>\n",
+                template: "<div [hidden]=\"!active\" class=\"content\" [attr.aria-hidden]=\"!active\" [attr.aria-labeledby]=\"tabID\" id=\"{{ panelID }}\">\n  <ng-content></ng-content>\n</div>\n",
                 encapsulation: ViewEncapsulation.None,
                 styles: [""]
             }] }
@@ -2992,7 +2710,7 @@ TabComponent.ctorParameters = () => [
 ];
 TabComponent.propDecorators = {
     tabTitle: [{ type: Input }],
-    isActive: [{ type: Input }],
+    active: [{ type: Input }],
     idTab: [{ type: Input }],
     isDisabled: [{ type: Input }]
 };
@@ -3002,55 +2720,26 @@ TabComponent.propDecorators = {
  * @suppress {checkTypes,extraRequire,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 class TabsComponent {
-    /* constructor tab */
     /**
      * @param {?} cdr
      */
     constructor(cdr) {
         this.cdr = cdr;
-        /* Variables */
-        this.tabs = [];
         this.sizeInit = 0;
-        this.arrayTmp = [];
-        this.startIndexActiv = 0;
-        this.TabComponentBis = TabComponent;
     }
-    /* Resize breakpoint tab */
+    // contentChildren are set
     /**
-     * @param {?} event
      * @return {?}
      */
-    onResize(event) {
-        if (this.tabsElement.length === 1 ||
-            this.tabsElement.last.nativeElement.offsetTop === this.tabsElement.first.nativeElement.offsetTop) {
-            this.isOver = true;
+    ngAfterContentInit() {
+        this.isOver = true;
+        // get all active tabs
+        /** @type {?} */
+        const activeTabs = this.tabs.filter(tab => tab.active);
+        // if there is no active tab set, activate the first
+        if (activeTabs.length === 0) {
+            this.selectTab(this.tabs.first);
         }
-        else {
-            this.isOver = false;
-        }
-        this.cdr.detectChanges();
-    }
-    /* add tab to tab table and select tab active */
-    /**
-     * @param {?} tab
-     * @return {?}
-     */
-    addTab(tab) {
-        if (this.tabs.length === this.startIndexActiv) {
-            tab.isActive = true;
-        }
-        this.tabs.push(tab);
-    }
-    /* close tabs et open the active tab */
-    /**
-     * @param {?} tab
-     * @return {?}
-     */
-    selectTab(tab) {
-        this.tabs.forEach(TabComponentBis => {
-            TabComponentBis.isActive = false;
-        });
-        tab.isActive = true;
     }
     /* breakpoint tab */
     /**
@@ -3058,27 +2747,55 @@ class TabsComponent {
      */
     ngAfterViewInit() {
         this.arrayTmp = this.tabsElement.toArray();
-        for (let i = 0; i < this.arrayTmp.length - 1; i++) {
-            this.sizeInit = this.arrayTmp[i].nativeElement.clientWidth + this.sizeInit;
+        for (let i = 0; i < this.arrayTmp.length; i++) {
+            this.sizeInit += this.arrayTmp[i].nativeElement.clientWidth;
         }
         if (this.tabsElement.last.nativeElement.offsetTop !== this.tabsElement.first.nativeElement.offsetTop) {
-            this.isOver = true;
-        }
-        else if (this.tabsElement.length === 1) {
-            this.isOver = true;
-        }
-        else {
             this.isOver = false;
         }
+        else if (this.tabsElement.length === 1) {
+            this.isOver = false;
+        }
+        else {
+            this.isOver = true;
+        }
         this.cdr.detectChanges();
+    }
+    /**
+     * @param {?} event
+     * @return {?}
+     */
+    onResize(event) {
+        if (this.tabsElement.last.nativeElement.offsetTop !== this.tabsElement.first.nativeElement.offsetTop) {
+            this.isOver = false;
+            if (this.sizeInit +
+                parseFloat(getComputedStyle(this.tabsElement.last.nativeElement).marginRight) * this.tabsElement.length <
+                this.container.nativeElement.clientWidth) {
+                this.isOver = true;
+            }
+        }
+        else {
+            this.isOver = true;
+        }
+        this.cdr.detectChanges();
+    }
+    /**
+     * @param {?} tab
+     * @return {?}
+     */
+    selectTab(tab) {
+        // deactivate all tabs
+        this.tabs.toArray().forEach(t => (t.active = false));
+        // activate the tab the user has clicked on.
+        tab.active = true;
     }
 }
 TabsComponent.decorators = [
     { type: Component, args: [{
                 selector: 'c3m-tabs',
-                template: "<div class=\"tabsContainer\">\n  <ul>\n    <li #tabs *ngFor=\"let tab of tabs\" [ngClass]=\"{ active: tab.isActive, over: isOver }\">\n      <button\n        id=\"{{ tab.tabID }}\"\n        (click)=\"selectTab(tab)\"\n        [attr.aria-expanded]=\"tab.isActive\"\n        [attr.aria-controls]=\"tab.panelID\"\n        [attr.aria-selected]=\"tab.isActive\"\n      >\n        {{ tab.tabTitle }}\n      </button>\n    </li>\n  </ul>\n\n  <ng-content></ng-content>\n</div>\n",
+                template: "<div class=\"tabsContainer\" #container>\n  <ul>\n    <li #tabs *ngFor=\"let tab of tabs\" [ngClass]=\"{ active: tab.active, over: isOver }\">\n      <button\n        id=\"{{ tab.tabID }}\"\n        (click)=\"selectTab(tab)\"\n        [attr.aria-expanded]=\"tab.isActive\"\n        [attr.aria-controls]=\"tab.panelID\"\n        [attr.aria-selected]=\"tab.isActive\"\n      >\n        {{ tab.tabTitle }}\n      </button>\n    </li>\n  </ul>\n  <ng-content></ng-content>\n</div>\n",
                 encapsulation: ViewEncapsulation.None,
-                styles: [".tabsContainer{margin:2rem 0}.tabsContainer>ul li button{width:100%;font-family:var(--stack-b);text-align:left;background-color:var(--n-light);padding:.5em 1em}.tabsContainer>ul li button:focus,.tabsContainer>ul li button:hover,.tabsContainer>ul li.active button{color:var(--text-inv);background-color:var(--main-color)}c3m-tab .content[aria-hidden=false]{background-color:var(--n-light);padding:1rem}c3m-tab .content[aria-hidden=true]{display:none}.tabsContainer>ul li.over{display:inline-block;margin-right:.5rem}.tabsContainer>ul li.over button{background-color:var(--body-bg);border-radius:0}.tabsContainer>ul li.over button:focus,.tabsContainer>ul li.over button:hover,.tabsContainer>ul li.over.active button{color:var(--body-text);background-color:var(--n-light)}@media screen and (min-width:850px){.tabsContainer>ul li{font-size:1.2rem}c3m-tab .content[aria-hidden=false]{padding:2rem}}"]
+                styles: [".tabsContainer{margin:2rem 0}.tabsContainer ul li button{width:100%;font-family:var(--stack-b);text-align:left;background-color:var(--n-light);padding:.5em 1em}.tabsContainer ul li button:focus,.tabsContainer ul li button:hover,.tabsContainer ul li.active button{color:var(--text-inv);background-color:var(--main-color)}c3m-tab .content{background-color:var(--n-light);padding:1rem}c3m-tab .content[hidden]{display:none}.tabsContainer ul li.over{display:inline-block;margin-right:.5rem}.tabsContainer ul li.over button{background-color:var(--body-bg);border-radius:0}.tabsContainer ul li.over button:focus,.tabsContainer ul li.over button:hover,.tabsContainer ul li.over.active button{color:var(--body-text);background-color:var(--n-light)}@media screen and (min-width:850px){.tabsContainer ul li{font-size:1.2rem}c3m-tab .content{padding:2rem}}"]
             }] }
 ];
 /** @nocollapse */
@@ -3086,8 +2803,9 @@ TabsComponent.ctorParameters = () => [
     { type: ChangeDetectorRef }
 ];
 TabsComponent.propDecorators = {
+    tabs: [{ type: ContentChildren, args: [TabComponent,] }],
     tabsElement: [{ type: ViewChildren, args: ['tabs',] }],
-    tabComponents: [{ type: ContentChildren, args: [TabComponent,] }],
+    container: [{ type: ViewChild, args: ['container',] }],
     onResize: [{ type: HostListener, args: ['window:resize', ['$event'],] }]
 };
 
@@ -3436,6 +3154,11 @@ ButtonLinkComponent.propDecorators = {
  * @fileoverview added by tsickle
  * @suppress {checkTypes,extraRequire,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
+
+/**
+ * @fileoverview added by tsickle
+ * @suppress {checkTypes,extraRequire,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
+ */
 class ModalDirective {
     /**
      * @param {?} el
@@ -3656,10 +3379,6 @@ CreamnglibModule.decorators = [
                     ProgressComponent,
                     SpinnerProgressComponent,
                     StepComponent,
-                    StepItemComponent,
-                    ColumnTableComponent,
-                    ToggleTableComponent,
-                    PageSwipeTableComponent,
                     TabsComponent,
                     TabComponent,
                     PaginationComponent,
@@ -3715,10 +3434,6 @@ CreamnglibModule.decorators = [
                     ProgressComponent,
                     SpinnerProgressComponent,
                     StepComponent,
-                    StepItemComponent,
-                    ColumnTableComponent,
-                    ToggleTableComponent,
-                    PageSwipeTableComponent,
                     TabsComponent,
                     TabComponent,
                     PaginationComponent,
@@ -3743,6 +3458,6 @@ CreamnglibModule.decorators = [
  * @suppress {checkTypes,extraRequire,missingReturn,unusedPrivateMembers,uselessCode} checked by tsc
  */
 
-export { ButtonComponent, ButtonFileComponent, ButtonIconComponent, ButtonIconOnlyComponent, ButtonSubmitComponent, ToastComponent, AccordionComponent, AccordionItemComponent, CalendarComponent, CarouselComponent, CarouselItemComponent, CheckboxComponent, CheckboxButtonComponent, CheckboxGroupComponent, CheckboxGroupItemComponent, CheckboxLinkComponent, DropdownComponent, DropdownItemComponent, FieldsetComponent, InputComponent, InputErrorMsgComponent, InputFloatingComponent, InputMailComponent, InputMaterialComponent, InputPasswordComponent, InputSearchComponent, InputTelComponent, InputUrlComponent, ListComponent, ListDescriptionComponent, ListOrderComponent, ListThumbnailsComponent, RadioComponent, RadioItemComponent, SelectComponent, SelectDatalistComponent, SelectDatalistsComponent, SkipComponent, SliderComponent, ProgressComponent, SpinnerProgressComponent, StepComponent, StepItemComponent, ColumnTableComponent, ToggleTableComponent, PageSwipeTableComponent, TabsComponent, TabComponent, PaginationComponent, ModalComponent, ModalAlertComponent, ButtonLinkComponent, ModalDirective, PaginationDirective, StepsDirective, ScrolltoDirective, CreamnglibModule, PagerService as ɵa };
+export { ButtonComponent, ButtonFileComponent, ButtonIconComponent, ButtonIconOnlyComponent, ButtonSubmitComponent, ToastComponent, AccordionComponent, AccordionItemComponent, CalendarComponent, CarouselComponent, CarouselItemComponent, CheckboxComponent, CheckboxButtonComponent, CheckboxGroupComponent, CheckboxGroupItemComponent, CheckboxLinkComponent, DropdownComponent, DropdownItemComponent, FieldsetComponent, InputComponent, InputErrorMsgComponent, InputFloatingComponent, InputMailComponent, InputMaterialComponent, InputPasswordComponent, InputSearchComponent, InputTelComponent, InputUrlComponent, ListComponent, ListDescriptionComponent, ListOrderComponent, ListThumbnailsComponent, RadioComponent, RadioItemComponent, SelectComponent, SelectDatalistComponent, SelectDatalistsComponent, SkipComponent, SliderComponent, ProgressComponent, SpinnerProgressComponent, StepComponent, TabsComponent, TabComponent, PaginationComponent, ModalComponent, ModalAlertComponent, ButtonLinkComponent, ModalDirective, PaginationDirective, StepsDirective, ScrolltoDirective, CreamnglibModule, PagerService as ɵa };
 
 //# sourceMappingURL=creamlib-ng.js.map
